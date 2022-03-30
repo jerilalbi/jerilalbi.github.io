@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root{
-    --primary-color: rgb(21, 18, 114);
+    --primary-color: rgb(21, 181, 114);
     --background-color: rgb(7, 17, 26);
     --caption-color: rgb(168, 177, 187);
     --title-text: 'Alegreya', serif;
@@ -12,14 +12,16 @@ html{
 
 body{
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 /* HEADER */
 .header{
     z-index: 100;
     padding: 10px;
-    background-color: black;
+    width: 100%;
+    margin: 0;
+    background-color: var(--background-color);
 }
 
 .navbar-nav{
@@ -61,24 +63,32 @@ body{
 }
 
 .nav-item{
-    display: flex;
     margin-left: 25px;
 }
 
-@media screen and (max-width: 575.5px) {
+.nav-link:hover{
+    color: white;
+}
+
+.btn.nav-link{
+    width: 6rem;
+    background-color: red;
+}
+
+@media screen and (max-width: 768.5px) {
      .navbar-nav {
         position: fixed;
         top: 5rem;
         left: -100%;
         flex-direction: column;
-        background-color: #fff;
+        background-color: var(--background-color);
         width: 90%;
         margin: 0 auto;
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
         box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
+            0 10px 27px rgba(255, 255, 255, 0.4);
     }
 
     .navbar-nav.res {
@@ -90,11 +100,8 @@ body{
     }
 
     .nav-link.res{
-        color: black;
-    }
-
-    .nav-link.res:hover{
-        color: aqua;
+        color: white;
+        cursor: pointer;
     }
 
     .hamburger {
@@ -115,4 +122,34 @@ body{
     .hamburger.res .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+@media screen and (max-width: 450px) {
+    .navbar-brand{
+        font-size: 25px;
+    }
+}
+/* HOME */
+.home{
+    background-color: var(--background-color);
+    height: 700px;
+    width: 100%;
+}
+
+.home-img{
+    background-color: red;
+    height: 600px;
+    float: left;
+}
+
+.home-text{
+    height: 600px;
+    float: left;
+    padding: 2rem;
+}
+
+.job-text{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 20px;
 }
