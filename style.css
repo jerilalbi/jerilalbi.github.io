@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --primary-color: rgb(21, 18, 114);
+    --background-color: rgb(7, 17, 26);
+    --caption-color: rgb(168, 177, 187);
+    --title-text: 'Alegreya', serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* HEADER */
+.header{
+    z-index: 100;
+    padding: 10px;
+    background-color: black;
+}
+
+.navbar-nav{
+    font-weight: bold;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-link{
+    color: white;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-family: var(--title-text);
+    font-weight: bold;
+    font-size: 35px;
+    background: linear-gradient(
+    to bottom, 	#0057b7,#0057b7, #ffd700, #ffd700);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.nav-item{
+    display: flex;
+    margin-left: 25px;
+}
+
+@media screen and (max-width: 575.5px) {
+     .navbar-nav {
+        position: fixed;
+        top: 5rem;
+        left: -100%;
+        flex-direction: column;
+        background-color: #fff;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-nav.res {
+        left: 5%;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .nav-link.res{
+        color: black;
+    }
+
+    .nav-link.res:hover{
+        color: aqua;
+    }
+
+    .hamburger {
+        color: white;
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.res .bar:nth-child(2) {
+        opacity: 0;
+        color: white;
+    }
+
+    .hamburger.res .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.res .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
