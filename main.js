@@ -21,7 +21,7 @@ function closeMenu(){
 
 //Text typing
 var typing=new Typed(".job-text", {
-  strings: [ "WEB DEVELOPER","FLUTTER DEVELOPER"],
+  strings: [ "WEB DEVELOPER.","FLUTTER DEVELOPER."],
   typeSpeed: 200,
   backSpeed: 60,
   loop: true,
