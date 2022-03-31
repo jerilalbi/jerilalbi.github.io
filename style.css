@@ -2,7 +2,7 @@
 :root{
     --primary-color: rgb(21, 181, 114);
     --background-color: rgb(7, 17, 26);
-    --caption-color: rgb(168, 177, 187);
+    --caption-color: rgb(166, 177, 187);
     --title-text: 'Alegreya', serif;
 }
 
@@ -132,24 +132,77 @@ body{
 /* HOME */
 .home{
     background-color: var(--background-color);
-    height: 700px;
     width: 100%;
+    height: 675px;
 }
 
 .home-img{
-    background-color: red;
     height: 600px;
     float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-text{
     height: 600px;
     float: left;
     padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .job-text{
     color: var(--primary-color);
     font-weight: bold;
     font-size: 20px;
+}
+
+.my-name{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.sub-title{
+    color: var(--caption-color);
+    font-size: 15;
+    display: block;
+}
+
+.gets-btn{
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    height: 48px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.img-box{
+    background: url(./assets/home.png) no-repeat; 
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 860px) {
+    .home{
+        height: 550px;
+    }
+
+    .home-img{
+       height: 500px;
+   }
+
+    .home-text{
+        height: 500px;
+    }
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar{
+    width: .6rem;
 }
