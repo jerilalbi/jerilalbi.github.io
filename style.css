@@ -5,6 +5,19 @@
     --background-color: rgb(7, 17, 26);
     --caption-color: rgb(166, 177, 187);
     --title-text: 'Rubik', sans-serif;
+    --very-big-font: 50px;
+    --big-font: 32px;
+    --medium-font: 20px;
+    --small-font: 15px;
+}
+
+@media screen and (min-width: 2000px) {
+    :root{
+        --very-big-font: 70px;
+        --big-font: 50px;
+        --medium-font: 40px;
+        --small-font: 20px;
+    }
 }
 
 html{
@@ -61,7 +74,7 @@ a{
 .navbar-brand{
     font-family: var(--title-text);
     font-weight: 700;
-    font-size: 32px;
+    font-size: var(--big-font);
     background: linear-gradient(
     to bottom, 	#0057b7,#0057b7, #ffd700, #ffd700);
     -webkit-text-fill-color: transparent;
@@ -70,6 +83,7 @@ a{
 
 .nav-item{
     margin-left: 25px;
+    font-size: var(--small-font);
 }
 
 .nav-link:hover{
@@ -132,7 +146,7 @@ a{
 
 @media screen and (max-width: 450px) {
     .navbar-brand{
-        font-size: 25px;
+        font-size: var(--medium-font);
     }
 }
 /* HOME */
@@ -163,18 +177,18 @@ a{
 .job-text{
     color: var(--primary-color);
     font-weight: bold;
-    font-size: 20px;
+    font-size: var(--medium-font);
 }
 
 .my-name{
     color: white;
-    font-size: 50px;
+    font-size: var(--very-big-font);
     font-weight: bold;
 }
 
 .sub-title{
     color: var(--caption-color);
-    font-size: 15px;
+    font-size: var(--small-font);
     display: block;
     font-family: 'Roboto', sans-serif;
 }
@@ -210,9 +224,23 @@ a{
     text-align: center;
     float: left;
     color: black;
-    font-size: 21px;
+    font-size: var(--medium-font);
     line-height: 30px;
     vertical-align: middle;
+}
+
+@media screen and (min-width: 2000px) {
+    .icon-box{
+        width: 14rem;
+        height: 3rem;
+    }
+
+    .icon-btn{
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        border-radius: 25px;
+    }
 }
 
 @media screen and (max-width: 860px) {
@@ -232,6 +260,7 @@ a{
 /* SERVICES */
 .services{
     width: 100%;
+    overflow: hidden;
     background-color: var(--background-color);
 }
 
@@ -250,7 +279,7 @@ a{
 
 .download-cv{
     color: var(--primary-color);
-    font-size: 16px;
+    font-size: var(--small-font);
     font-weight: 900;
     margin-left: auto;
     line-height: 52px;
@@ -260,7 +289,7 @@ a{
 
 .services-moto{
     color: white;
-    font-size: 18px;
+    font-size: var(--medium-font);
     font-weight: 900;
 }
 
@@ -294,7 +323,7 @@ a{
 
 .service-logo{
     color: var(--primary-color);
-    font-size: 35px;
+    font-size: var(--big-font);
     margin: auto 0;
     margin-right: 10px;
 }
@@ -303,18 +332,220 @@ a{
     color: white;
     margin: auto 0;
     font-weight: 700;
-    font-size: 20px;
+    line-height: 50px;
+    font-size: var(--medium-font);
 }
 
 .service-content{
     color: var(--caption-color);
-    font-size: 15px;
+    font-size: var(--small-font);
     font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 2000px){
+    .service-heading{
+        height: 120px;
+    }
+
+    .download-cv{
+        line-height: 120px;
+    }
 }
 
 @media screen and (max-width: 475.5px) {
     .content-box{
         height: 150px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .service-heading{
+        height: 72px;
+    }
+}
+
+/* PORTFOLIO */
+.portfolio{
+    width: 100%;
+    height: 800px;
+}
+
+.mobile-project{
+    height: 730px;
+}
+
+.app-project-img{
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-imgBox{
+    height: 730px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.projectImg{
+    height: 90%;
+    width: 450px;
+}
+
+.Webproject-img{
+    height: 730px;
+    width: 600px;
+    background: url(./assets/web_project1.png) no-repeat;
+    background-size:contain;
+}
+
+.app-project-textBox{
+    height: 100%;
+    float: left; 
+    display: flex;
+    align-items: center;
+}
+
+.project-details-box{
+    width: 22rem;
+    height: 250px;
+}
+
+.project-type{
+    color: var(--primary-color);
+    font-weight: 900;
+    font-size: var(--small-font);
+    display: block;
+}
+
+.project-type .letter{
+    display: inline-block;
+    line-height: 1em;
+  }
+
+.project-title{
+    display: inline-block;
+    line-height: 25px;
+    color: white;
+    font-weight: 900;
+    font-size: var(--big-font);
+}
+.rproject-title{
+    display: block;
+    line-height: 25px;
+    color: white;
+    font-weight: 900;
+    font-size: var(--big-font);
+}
+
+.rproject-title .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+.project-desc{
+    display: block;
+    margin-top: 1rem;
+    color: var(--caption-color);
+    font-size: var(--small-font);
+    font-family: 'Roboto', sans-serif;
+}
+
+.explore-project{
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    height: 48px;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.next-project{
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    height: 48px;
+    width: 100px;
+    border-width: 1px;
+    border-color: var(--primary-color);
+    margin: 1rem 0;
+    margin-left: 10px;
+    border-radius: 8px; 
+}
+
+.next-project:hover{
+    color: white;
+}
+
+@media screen and (max-width: 885px) {
+    .mobile-project{
+        height: 600px;
+    }
+
+    .project-imgBox{
+        height: 600px;
+    }
+
+    .projectImg{
+        width: 390px;
+    }
+}
+
+@media screen and (max-width: 767.5px){
+    .mobile-project{
+        height: 860px;
+    }
+    
+    .app-project-img{
+        height: 650px;
+    }
+
+    .project-imgBox{
+        height: 500px;
+        width: 100%;
+        background-color: #ffd700;
+    }
+
+    .Webproject-img{
+        height: 500px;
+        width: 450px;
+    }
+    
+    .app-project-textBox{
+        height: 260px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .mobile-project{
+        height: 600px;
+    }
+
+    .app-project-img{
+        height: 520px;
+    }
+
+    .Webproject-img{
+        width: 90%;
+    }
+
+    .projectImg{
+        width: 300px;
+    }
+
+    .project-details-box{
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .projectImg{
+        width: 90%;
     }
 }
 
