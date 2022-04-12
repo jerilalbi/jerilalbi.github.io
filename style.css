@@ -20,6 +20,15 @@
     }
 }
 
+@media screen and (max-width: 250px) {
+    :root{
+        --very-big-font: 30px;
+        --big-font: 28px;
+        --medium-font: 18px;
+        --small-font: 10px; 
+    }
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -75,10 +84,11 @@ a{
     font-family: var(--title-text);
     font-weight: 700;
     font-size: var(--big-font);
-    background: linear-gradient(
+    color: white;
+    /* background: linear-gradient(
     to bottom, 	#0057b7,#0057b7, #ffd700, #ffd700);
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; */
 }
 
 .nav-item{
@@ -367,14 +377,24 @@ a{
 /* PORTFOLIO */
 .portfolio{
     width: 100%;
-    height: 800px;
 }
 
 .mobile-project{
     height: 730px;
 }
 
+.web-project{
+    height: 550px;
+}
+
 .app-project-img{
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.web-project-img{
     height: 100%;
     float: left;
     display: flex;
@@ -396,11 +416,9 @@ a{
     width: 450px;
 }
 
-.Webproject-img{
-    height: 730px;
-    width: 600px;
-    background: url(./assets/web_project1.png) no-repeat;
-    background-size:contain;
+.webprojectImg{
+    height: 65%;
+    width: 450px;
 }
 
 .app-project-textBox{
@@ -408,6 +426,14 @@ a{
     float: left; 
     display: flex;
     align-items: center;
+}
+
+.web-project-textbox{
+    height: 100%;
+    float: left; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-details-box{
@@ -481,13 +507,20 @@ a{
     color: white;
 }
 
+@media screen and (max-width: 920px) {
+    .webprojectImg{
+        height: 58%;
+        width: 370px;
+    }
+}
+
 @media screen and (max-width: 885px) {
     .mobile-project{
         height: 600px;
     }
 
-    .project-imgBox{
-        height: 600px;
+    .web-project{
+        height: 500px;
     }
 
     .projectImg{
@@ -496,23 +529,29 @@ a{
 }
 
 @media screen and (max-width: 767.5px){
+
     .mobile-project{
-        height: 860px;
+        height: 900px;
+    }
+
+    .web-project{
+        height: 700px;
     }
     
     .app-project-img{
         height: 650px;
     }
 
-    .project-imgBox{
-        height: 500px;
-        width: 100%;
-        background-color: #ffd700;
+    .web-project-textbox{
+        height: 300px;
     }
 
-    .Webproject-img{
-        height: 500px;
-        width: 450px;
+    .web-project-img{
+        height: 400px;
+    }
+
+    .webprojectImg{
+        height: 300px;
     }
     
     .app-project-textBox{
@@ -523,6 +562,10 @@ a{
 
 @media screen and (max-width: 465px) {
     .mobile-project{
+        height: 770px;
+    }
+
+    .web-project{
         height: 600px;
     }
 
@@ -530,12 +573,17 @@ a{
         height: 520px;
     }
 
-    .Webproject-img{
-        width: 90%;
-    }
-
     .projectImg{
         width: 300px;
+    }
+
+    .web-project-img{
+        height: 280px;
+    }
+
+    .webprojectImg{
+        height: 250px;
+        width: 280px;
     }
 
     .project-details-box{
@@ -545,6 +593,10 @@ a{
 
 @media screen and (max-width: 250px) {
     .projectImg{
+        width: 90%;
+    }
+
+    .webprojectImg{
         width: 90%;
     }
 }

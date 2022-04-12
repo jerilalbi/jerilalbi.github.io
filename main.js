@@ -27,6 +27,8 @@ var typing=new Typed(".job-text", {
   loop: true,
 });
 
+//Mobile Project
+
 //project-explore
 function exploreBtn(projectNum){
   switch(projectNum){
@@ -38,13 +40,13 @@ function exploreBtn(projectNum){
 }
 
 //project type text animation
-function projectTypeAnime(){
-  var projectType = document.querySelector('.project-type');
+function projectTypeAnime(id){
+  var projectType = document.querySelector(`${id}`);
 projectType.innerHTML = projectType.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: false})
   .add({
-    targets: '.project-type .letter',
+    targets: `${id} .letter`,
     scale: [4,1],
     opacity: [0,1],
     translateZ: 0,
@@ -52,46 +54,46 @@ anime.timeline({loop: false})
     duration: 950,
     delay: (el, i) => 70*i
   }).add({
-    targets: '.project-type',
+    targets: `${id}`,
     opacity: 1,
     duration: 1000,
     easing: "easeOutExpo",
     delay: 1000
   });
 }
-projectTypeAnime();
+projectTypeAnime('#projectType');
 
   //project name text1 animation
-  function projectNameAnime(){
-    var projectName = document.querySelector('.project-title');
+  function projectNameAnime(id){
+    var projectName = document.querySelector(`${id}`);
 projectName.innerHTML = projectName.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: false})
   .add({
-    targets: '.project-title .letter',
+    targets: `${id} .letter`,
     opacity: [0,1],
     easing: "easeInOutQuad",
     duration: 2250,
     delay: (el, i) => 150 * (i+1)
   })
   .add({
-    targets: '.project-title',
+    targets: `${id}`,
     opacity: 1,
     duration: 1000,
     easing: "easeOutExpo",
     delay: 1000
   });
   }
-  projectNameAnime();
+  projectNameAnime('#projectName');
 
   //project name text2 animation
- function projectName2(){
-  var projectName2 = document.querySelector('.rproject-title');
+ function projectName2(id){
+  var projectName2 = document.querySelector(id);
   projectName2.innerHTML = projectName2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
   
   anime.timeline({loop: false})
     .add({
-      targets: '.rproject-title .letter',
+      targets: `${id} .letter`,
       translateX: [40,0],
       translateZ: 0,
       opacity: [0,1],
@@ -99,7 +101,7 @@ anime.timeline({loop: false})
       duration: 1200,
       delay: (el, i) => 500 + 30 * i
     }).add({
-      targets: '.rproject-title .letter',
+      targets: `${id} .letter`,
       translateX: [0,0],
       opacity: [1,1],
       easing: "easeInExpo",
@@ -107,11 +109,7 @@ anime.timeline({loop: false})
       delay: (el, i) => 100 + 30 * i
     });
  }
- projectName2();
-
-  //IMAGE ANIMATION
-  
-  
+ projectName2('#projectClass');
 
 //PROJECT DETAILS CHANGE
 var projectNum = 1;
@@ -124,11 +122,11 @@ var projectNum = 1;
   if(projectNum == 1){
     $("#projectImg").fadeOut('slow');
     projectType.innerHTML = 'ANDROID APP'
-    projectTypeAnime();
+    projectTypeAnime('#projectType');
     projectName.innerHTML = 'COWIN ALERT'
-    projectNameAnime();
+    projectNameAnime('#projectName');
     projectClass.innerHTML = 'SLOT INFORM APP'
-    projectName2();
+    projectName2('#projectClass');
     projectDesc.innerHTML = 'Cowin Alert gives the number of available vaccine slots in your area.';
 
     setTimeout(function(){
@@ -140,11 +138,11 @@ var projectNum = 1;
   } else{
     $("#projectImg").fadeOut('slow');
     projectType.innerHTML = 'ANDROID APP'
-    projectTypeAnime();
+    projectTypeAnime('#projectType');
     projectName.innerHTML = 'WALPER'
-    projectNameAnime();
+    projectNameAnime('#projectName');
     projectClass.innerHTML = 'WALLPAPER APP'
-    projectName2();
+    projectName2('#projectClass');
     projectDesc.innerHTML = 'WalPer produces a never-ending stream of stunning wallpapers - for any device.';
 
     setTimeout(function(){
@@ -153,5 +151,64 @@ var projectNum = 1;
     },1500)
     document.getElementById('exploreBtn').setAttribute('onclick','exploreBtn(1)');
     projectNum--;
+  }
+}
+
+//Web Projects
+
+projectTypeAnime('#webProjectType');
+projectNameAnime('#webProjectName');
+projectName2('#webProjectClass');
+
+//PROJECT DETAILS CHANGE
+var webProjectNum = 1;
+ function webProjectDetailsChange(){
+  var image = document.getElementById('webProjectImg');
+  var projectType = document.getElementById('webProjectType');
+  var projectName = document.getElementById('webProjectName');
+  var projectClass = document.getElementById('webProjectClass');
+  var projectDesc = document.getElementById('webProjectDesc');
+  if(webProjectNum == 1){
+    $("#webProjectImg").fadeOut('slow');
+    projectType.innerHTML = 'WEBSITE'
+    projectTypeAnime('#webProjectType');
+    projectName.innerHTML = 'JA.'
+    projectNameAnime('#webProjectName');
+    projectClass.innerHTML = 'PORTFOLIO WEBSITE'
+    projectName2('#webProjectClass');
+    projectDesc.innerHTML = 'Personal portfolio website of my own to show case my skills and projects.';
+
+    setTimeout(function(){
+      image.src = 'assets/web_project2.png'
+     $("#webProjectImg").fadeIn('slow')
+    },1500)
+    document.getElementById('webExploreBtn').setAttribute('onclick','webExploreBtn(2)');
+    webProjectNum++;
+  } else{
+    $("#webProjectImg").fadeOut('slow');
+    projectType.innerHTML = 'WEBSITE'
+    projectTypeAnime('#webProjectType');
+    projectName.innerHTML = 'VOYAGE'
+    projectNameAnime('#webProjectName');
+    projectClass.innerHTML = 'TRAVEL WEBSITE'
+    projectName2('#webProjectClass');
+    projectDesc.innerHTML = 'Voyage helps in gathering travel information, and opinions of travel-related content.';
+
+    setTimeout(function(){
+      image.src = 'assets/web_project1.png'
+     $("#webProjectImg").fadeIn('slow')
+    },1500)
+    document.getElementById('webExploreBtn').setAttribute('onclick','webExploreBtn(1)');
+    webProjectNum--;
+  }
+}
+
+//Web Explore button
+function webExploreBtn(num){
+  switch(num){
+    case 1: window.location = 'https://github.com/Jeril-albi/Travel-website';
+    break;
+    case 2: window.location = "https://jerilalbi.in";
+    break;
   }
 }
