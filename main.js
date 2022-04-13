@@ -212,3 +212,43 @@ function webExploreBtn(num){
     break;
   }
 }
+
+//SKILLS
+var skills = [
+  {
+    skill: "FLUTTER",
+    percentage: "80",
+  },
+  {
+    skill: "JAVASCRIPT",
+    percentage: "65",
+  },
+  {
+    skill: "HTML",
+    percentage: "92",
+  },
+  {
+    skill: "CSS",
+    percentage: "87",
+  },
+];
+
+var skillContent = "";
+
+skills.map(function(value){
+  skillContent += `
+  <div class="skill-row">
+          <div class="skill-sect-row">
+            <div class="skill-bar" style="width: ${value.percentage}%;">
+              ${value.skill}
+            </div>
+            <div class="skill-hr-line" style="width: ${102 - value.percentage}%;"></div>
+          </div>
+          <div class="skill-percet-row">
+            ${value.percentage}%
+          </div>
+  </div>
+  `
+});
+console.log(skillContent);
+document.getElementById('skillContent').innerHTML = skillContent;
