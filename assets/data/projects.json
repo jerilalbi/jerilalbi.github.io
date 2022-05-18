@@ -1,0 +1,37 @@
+{
+    "mobile" : [
+        {
+            "app_name" : "WALPER",
+            "app_info" : "WALLPAPER APP",
+            "app_desc" : "WalPer produces a never-ending stream of stunning wallpapers - for any device.",
+            "more_info" : "https://play.google.com/store/apps/details?id=com.jerilalbi.wallper_pro"
+        },
+        {
+            "app_name" : "QUIZME",
+            "app_info" : "QUIZ APP",
+            "app_desc" : "WalPer produces a never-ending stream of stunning wallpapers - for any device.",
+            "more_info" : "https://play.google.com/store/apps/details?id=com.jerilalbi.wallper_pro"
+        },
+        {
+            "app_name" : "COWIN ALERT",
+            "app_info" : "SLOT INFORM APP",
+            "app_desc" : "Cowin Alert gives the number of available vaccine slots in your area.",
+            "more_info" : "https://github.com/Jeril-albi/vaccine-notifier"
+        }
+    ],
+
+    "web" : [
+        {
+            "website_name" : "VOYAGE",
+            "website_info" : "TRAVEL WEBSITE",
+            "website_desc" : "Voyage helps in gathering travel information, and opinions of travel-related content.",
+            "more_info" : "https://github.com/Jeril-albi/vaccine-notifier"
+        },
+        {
+            "website_name" : "JA.",
+            "website_info" : "PORTFOLIO WEBSITE",
+            "website_desc" : "Personal portfolio website of my own to show case my skills and projects.",
+            "more_info" : "https://github.com/Jeril-albi/vaccine-notifier"
+        }
+    ]
+}

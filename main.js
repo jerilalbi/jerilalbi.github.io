@@ -27,18 +27,6 @@ var typing=new Typed(".job-text", {
   loop: true,
 });
 
-//Mobile Project
-
-//project-explore
-function exploreBtn(projectNum){
-  switch(projectNum){
-    case 1 : window.location = "https://play.google.com/store/apps/details?id=com.jerilalbi.wallper_pro";
-    break;
-    case 2: window.location = "https://github.com/Jeril-albi/vaccine-notifier";
-    break;
-  }
-}
-
 //project type text animation
 function projectTypeAnime(id){
   var projectType = document.querySelector(`${id}`);
@@ -154,6 +142,16 @@ var projectNum = 1;
   }
 }
 
+//Project more info btn pressed
+function exploreBtn(projectNum){
+  switch(projectNum){
+    case 1 : window.location = "https://play.google.com/store/apps/details?id=com.jerilalbi.wallper_pro";
+    break;
+    case 2: window.location = "https://github.com/Jeril-albi/vaccine-notifier";
+    break;
+  }
+}
+
 //Web Projects
 
 projectTypeAnime('#webProjectType');
@@ -250,5 +248,50 @@ skills.map(function(value){
   </div>
   `
 });
-console.log(skillContent);
 document.getElementById('skillContent').innerHTML = skillContent;
+
+//CONTACT ME
+var modal = document.getElementById("myModal");
+var contactBtn = document.getElementById("contactBtn");
+var getStartBtn = document.getElementById("getStartBtn");
+var submit_btn = document.getElementById("submit_btn");
+var span = document.getElementsByClassName("close")[0];
+
+contactBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+getStartBtn.onclick = function(){
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function msgSubmit(){
+  var name = document.getElementById('contactName');
+  var email = document.getElementById('contactEmail');
+  var msg = document.getElementById('contactMsg');
+  if(name.value == '' || name.value==null){
+    document.getElementById("nameError").setAttribute("style","display:block")
+    name.setAttribute("style","width:80%;margin-top: 0;")
+    
+  }
+  function validate(){
+    
+  }
+  console.log(name);
+  console.log(email);
+  console.log(msg);
+}
+
+//FOOTER
+var year = new Date().getFullYear() 
+document.getElementById('copyright').innerHTML = `&copy; Jeril Albi ${year}`
