@@ -897,8 +897,9 @@ background-color: var(--background-color);
   }
 
   .contact-msg-box{
+    float: left;
     height: 7rem;
-    width: 100%;
+    width: 90%;
     border-radius: 15px;
     color: white;
     background-color: var(--background-color);
@@ -913,6 +914,7 @@ background-color: var(--background-color);
   }
 
   .contact-submit-btn{
+    float: left;
     height: 3rem;
     width: 96%;
     border-radius: 15px;
@@ -931,7 +933,7 @@ background-color: var(--background-color);
   .input{
     float: left;
     height: 3rem;
-    width: 100%;
+    width: 90%;
     border-radius: 15px;
     border-color: var(--primary-color);
     border-style: solid;

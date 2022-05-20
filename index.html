@@ -246,12 +246,18 @@
           <input type="text" class="input" style="margin-top: 0;" placeholder="Enter The Name" id="contactName">
           <div class="error" id="nameError" style="display: none;">
             <i class="fa-solid fa-triangle-exclamation"></i>
-            <span class="error-msg">Enter The Name</span>
+            <span class="error-msg" id="error-msg">Enter The Name</span>
           </div>
           <input type="email" class="input" placeholder="Enter The Email" id="contactEmail" required>
-          <div class="error" id="emailError" style="display: none;"></div>
+          <div class="error" id="emailError" style="display: none">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span class="error-msg" id="error-msg">Check The Email</span>
+          </div>
           <textarea name="" id="contactMsg" class="contact-msg-box" placeholder="Enter The Message"></textarea>
-          <div class="error" id="msgError" style="display: none;"></div>
+          <div class="error" id="msgError" style="display: none">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span class="error-msg" id="error-msg">Enter A Message</span>
+          </div>
         <div class="contact-submit-btn" onclick="msgSubmit()" id="submit_btn">
             <span>SUBMIT</span>
         </div>

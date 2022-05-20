@@ -218,17 +218,49 @@ function msgSubmit(){
   var name = document.getElementById('contactName');
   var email = document.getElementById('contactEmail');
   var msg = document.getElementById('contactMsg');
-  if(name.value == '' || name.value==null){
+  var nameVal = nameValidate(name);
+  var emailVal = emailValidate(email.value);
+  var msgVal = messageValidate(msg);
+
+  if(nameVal && emailVal && msgVal){
+    console.log("mail sent")
+  }
+}
+
+function nameValidate(name){
+  if(name.value.trim() == '' || name.value==null){
     document.getElementById("nameError").setAttribute("style","display:block")
-    name.setAttribute("style","width:80%;margin-top: 0;")
-    
+    return false;
+  }else{
+    document.getElementById("nameError").setAttribute("style","display:none")
+    return true;
   }
-  function validate(){
-    
+}
+
+function emailValidate(email){
+  var atPos = email.indexOf('@');
+  var dotPos = email.lastIndexOf('.');
+
+  if(email.trim() == ''){
+    document.getElementById("emailError").setAttribute("style","display:block;margin-top: 15px");
+    return false;
+  }else if(atPos<1 || dotPos<atPos+2 || dotPos+2>=email.length ){
+    document.getElementById("emailError").setAttribute("style","display:block;margin-top: 15px")
+    return false;
+  }else{
+    document.getElementById("emailError").setAttribute("style","display:none");
+    return true;
   }
-  console.log(name);
-  console.log(email);
-  console.log(msg);
+}
+
+function messageValidate(msg){
+  if(msg.value.trim() == '' || msg.value==null){
+    document.getElementById("msgError").setAttribute("style","display:block;margin-top: 2.5rem")
+    return false;
+  }else{
+    document.getElementById("msgError").setAttribute("style","display:none")
+    return true;
+  }
 }
 
 //FOOTER
