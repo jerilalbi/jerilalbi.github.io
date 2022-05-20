@@ -49,7 +49,6 @@ anime.timeline({loop: false})
     delay: 1000
   });
 }
-projectTypeAnime('#projectType');
 
   //project name text1 animation
   function projectNameAnime(id){
@@ -72,7 +71,6 @@ anime.timeline({loop: false})
     delay: 1000
   });
   }
-  projectNameAnime('#projectName');
 
   //project name text2 animation
  function projectName2(id){
@@ -97,140 +95,78 @@ anime.timeline({loop: false})
       delay: (el, i) => 100 + 30 * i
     });
  }
- projectName2('#projectClass');
 
 //PROJECT DETAILS CHANGE
-var projectNum = 1;
- function projectDetailsChange(){
-  var image = document.getElementById('projectImg');
-  var projectType = document.getElementById('projectType');
-  var projectName = document.getElementById('projectName');
-  var projectClass = document.getElementById('projectClass');
-  var projectDesc = document.getElementById('projectDesc');
-  if(projectNum == 1){
-    $("#projectImg").fadeOut('slow');
-    projectType.innerHTML = 'ANDROID APP'
-    projectTypeAnime('#projectType');
-    projectName.innerHTML = 'COWIN ALERT'
-    projectNameAnime('#projectName');
-    projectClass.innerHTML = 'SLOT INFORM APP'
-    projectName2('#projectClass');
-    projectDesc.innerHTML = 'Cowin Alert gives the number of available vaccine slots in your area.';
+var appIndex = 0;
+var webIndex = 0;
+async function projectDetailsChange(isAppProject){
+  var response = await fetch("assets/data/projects.json");
+  var data = await response.json();
+  var appProjects = data.mobile;
+  var webProjects = data.web;
+  if(isAppProject){
+    if(appProjects.length == appIndex){
+      appIndex = 0;
+    }
+      var image = document.getElementById('projectImg');
+      var projectType = document.getElementById('projectType');
+      var projectName = document.getElementById('projectName');
+      var projectClass = document.getElementById('projectClass');
+      var projectDesc = document.getElementById('projectDesc');
+      var exploreProject = document.getElementById('exploreBtn');
+       exploreProject.href = appProjects[appIndex].more_info;
 
-    setTimeout(function(){
-      image.src = 'assets/mob_project2.png'
-     $("#projectImg").fadeIn('slow')
-    },1500)
-    document.getElementById('exploreBtn').setAttribute('onclick','exploreBtn(2)');
-    projectNum++;
-  } else{
-    $("#projectImg").fadeOut('slow');
-    projectType.innerHTML = 'ANDROID APP'
-    projectTypeAnime('#projectType');
-    projectName.innerHTML = 'WALPER'
-    projectNameAnime('#projectName');
-    projectClass.innerHTML = 'WALLPAPER APP'
-    projectName2('#projectClass');
-    projectDesc.innerHTML = 'WalPer produces a never-ending stream of stunning wallpapers - for any device.';
+      $("#projectImg").fadeOut('slow');
+          projectType.innerHTML = 'ANDROID APP'
+          projectTypeAnime('#projectType');
+          projectName.innerHTML = appProjects[appIndex].app_name
+          projectNameAnime('#projectName');
+          projectClass.innerHTML = appProjects[appIndex].app_info
+          projectName2('#projectClass');
+          projectDesc.innerHTML = appProjects[appIndex].app_desc
+      
+          setTimeout(function(){
+            image.src = appProjects[appIndex].img
+            appIndex++;
+           $("#projectImg").fadeIn('slow')
+          },1500)
+  }else{
+    if(webProjects.length == webIndex){
+      webIndex = 0;
+    }
+    var image = document.getElementById('webProjectImg');
+    var projectType = document.getElementById('webProjectType');
+    var projectName = document.getElementById('webProjectName');
+    var projectClass = document.getElementById('webProjectClass');
+    var projectDesc = document.getElementById('webProjectDesc');
+    var exploreProject = document.getElementById('webExploreBtn');
+       exploreProject.href = webProjects[webIndex].more_info;
 
-    setTimeout(function(){
-      image.src = 'assets/mob_project1.png'
-     $("#projectImg").fadeIn('slow')
-    },1500)
-    document.getElementById('exploreBtn').setAttribute('onclick','exploreBtn(1)');
-    projectNum--;
-  }
-}
-
-//Project more info btn pressed
-function exploreBtn(projectNum){
-  switch(projectNum){
-    case 1 : window.location = "https://play.google.com/store/apps/details?id=com.jerilalbi.wallper_pro";
-    break;
-    case 2: window.location = "https://github.com/Jeril-albi/vaccine-notifier";
-    break;
-  }
-}
-
-//Web Projects
-
-projectTypeAnime('#webProjectType');
-projectNameAnime('#webProjectName');
-projectName2('#webProjectClass');
-
-//PROJECT DETAILS CHANGE
-var webProjectNum = 1;
- function webProjectDetailsChange(){
-  var image = document.getElementById('webProjectImg');
-  var projectType = document.getElementById('webProjectType');
-  var projectName = document.getElementById('webProjectName');
-  var projectClass = document.getElementById('webProjectClass');
-  var projectDesc = document.getElementById('webProjectDesc');
-  if(webProjectNum == 1){
     $("#webProjectImg").fadeOut('slow');
     projectType.innerHTML = 'WEBSITE'
     projectTypeAnime('#webProjectType');
-    projectName.innerHTML = 'JA.'
+    projectName.innerHTML = webProjects[webIndex].website_name
     projectNameAnime('#webProjectName');
-    projectClass.innerHTML = 'PORTFOLIO WEBSITE'
+    projectClass.innerHTML = webProjects[webIndex].website_info
     projectName2('#webProjectClass');
-    projectDesc.innerHTML = 'Personal portfolio website of my own to show case my skills and projects.';
+    projectDesc.innerHTML = webProjects[webIndex].website_desc;
 
     setTimeout(function(){
-      image.src = 'assets/web_project2.png'
+      image.src = webProjects[webIndex].img
+      webIndex++
      $("#webProjectImg").fadeIn('slow')
     },1500)
-    document.getElementById('webExploreBtn').setAttribute('onclick','webExploreBtn(2)');
-    webProjectNum++;
-  } else{
-    $("#webProjectImg").fadeOut('slow');
-    projectType.innerHTML = 'WEBSITE'
-    projectTypeAnime('#webProjectType');
-    projectName.innerHTML = 'VOYAGE'
-    projectNameAnime('#webProjectName');
-    projectClass.innerHTML = 'TRAVEL WEBSITE'
-    projectName2('#webProjectClass');
-    projectDesc.innerHTML = 'Voyage helps in gathering travel information, and opinions of travel-related content.';
-
-    setTimeout(function(){
-      image.src = 'assets/web_project1.png'
-     $("#webProjectImg").fadeIn('slow')
-    },1500)
-    document.getElementById('webExploreBtn').setAttribute('onclick','webExploreBtn(1)');
-    webProjectNum--;
   }
 }
 
-//Web Explore button
-function webExploreBtn(num){
-  switch(num){
-    case 1: window.location = 'https://github.com/Jeril-albi/Travel-website';
-    break;
-    case 2: window.location = "https://jerilalbi.in";
-    break;
-  }
-}
+projectDetailsChange(true);
+projectDetailsChange(false);
 
 //SKILLS
-var skills = [
-  {
-    skill: "FLUTTER",
-    percentage: "80",
-  },
-  {
-    skill: "JAVASCRIPT",
-    percentage: "65",
-  },
-  {
-    skill: "HTML",
-    percentage: "92",
-  },
-  {
-    skill: "CSS",
-    percentage: "87",
-  },
-];
-
+async function skillUpdate(){
+var response = await fetch("assets/data/skill.json");
+var data = await response.json();
+var skills = data.skills;
 var skillContent = "";
 
 skills.map(function(value){
@@ -249,6 +185,9 @@ skills.map(function(value){
   `
 });
 document.getElementById('skillContent').innerHTML = skillContent;
+}
+
+skillUpdate();
 
 //CONTACT ME
 var modal = document.getElementById("myModal");
