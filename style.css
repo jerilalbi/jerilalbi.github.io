@@ -916,7 +916,7 @@ background-color: var(--background-color);
   .contact-submit-btn{
     float: left;
     height: 3rem;
-    width: 96%;
+    width: 90%;
     border-radius: 15px;
     color: white;
     font-weight: bold;
@@ -928,6 +928,15 @@ background-color: var(--background-color);
     padding-left: 5px;
     margin: 1rem 0;
     cursor: pointer;
+  }
+
+  .email-send-indicat{
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: var(--medium-font);
+      position: absolute;
+      top: 2%;
+      left: 43%;
   }
 
   .input{
@@ -985,6 +994,14 @@ background-color: var(--background-color);
 .error:hover  .error-msg{
     visibility: visible;
     transition-delay: 0.3s;
+}
+
+.email-modal-container{
+    height: 50%;
+    width: 100%;
+    color: var(--primary-color);
+    font-size: var(--big-font);
+    font-weight: bold;
 }
 
 /* FOOTER */

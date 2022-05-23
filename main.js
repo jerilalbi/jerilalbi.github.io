@@ -191,9 +191,10 @@ skillUpdate();
 
 //CONTACT ME
 var modal = document.getElementById("myModal");
+var emailModal = document.getElementById("email_modal");
 var contactBtn = document.getElementById("contactBtn");
 var getStartBtn = document.getElementById("getStartBtn");
-var submit_btn = document.getElementById("submit_btn");
+var emailOkBtn = document.getElementById("email_ok_btn");
 var span = document.getElementsByClassName("close")[0];
 
 contactBtn.onclick = function() {
@@ -206,6 +207,10 @@ getStartBtn.onclick = function(){
 
 span.onclick = function() {
   modal.style.display = "none";
+}
+
+emailOkBtn.onclick = function(){
+  emailModal.style.display = "none";
 }
 
 window.onclick = function(event) {
@@ -223,7 +228,29 @@ function msgSubmit(){
   var msgVal = messageValidate(msg);
 
   if(nameVal && emailVal && msgVal){
-    console.log("mail sent")
+    var reqParams = {
+      from_name: name.value,
+      to_name: 'Jeril Albi',
+      message: `Email: ${email.value} \n Message: ${msg.value}`
+    }
+    var type = new Typed(".email-send-wait", {
+      strings: [ "..."],
+      typeSpeed: 200,
+      backSpeed: 190,
+      loop: true,
+    });
+    type;
+    document.getElementById("email_sent").setAttribute("style","display:block")
+    emailjs.send('service_w7g3ufj','template_4dntxaq',reqParams).then(function(res){
+      if(res.status == 200){
+        modal.style.display = 'none';
+        emailModal.style.display = 'block';
+      }else{
+        modal.style.display = 'none';
+        document.getElementById("Email_message").innerHTML = "Sorry Email cannot be send at this time";
+        document.getElementById("Email_message").setAttribute("style","color:red")
+      }
+    })
   }
 }
 

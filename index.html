@@ -258,8 +258,22 @@
             <i class="fa-solid fa-triangle-exclamation"></i>
             <span class="error-msg" id="error-msg">Enter A Message</span>
           </div>
-        <div class="contact-submit-btn" onclick="msgSubmit()" id="submit_btn">
+        <div type="submit" class="contact-submit-btn" onclick="msgSubmit()" id="submit_btn">
             <span>SUBMIT</span>
+        </div>
+        <span class="email-send-indicat" id="email_sent" style="display: none;">SENDING<span class="email-send-wait">...</span></span>
+        </div>
+    </div>
+    <!-- EMAIL SENT ALERT -->
+    <div id="email_modal" class="col-12 modal">
+      <div class="col-sm-6 col-8 contactModal-content" style="height: 250px;" id="contactBox">
+        <div class="close-box">
+        </div>
+        <div class="email-modal-container" id="Email_message">
+          Thank you for contacting, I will sent the replay as soon as possible
+        </div>
+        <div class="contact-submit-btn" id="email_ok_btn" style="width: 100%;">
+            <span>OK</span>
         </div>
         </div>
     </div>
@@ -275,6 +289,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- EMAIL SENT -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+      emailjs.init("tPyU3TPTzM7A-zT5A");
+        })();
+    </script>
     <!-- MAIN JS -->
     <script src="main.js"></script>
 </body>
