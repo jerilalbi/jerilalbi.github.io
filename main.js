@@ -223,6 +223,7 @@ function msgSubmit(){
   var name = document.getElementById('contactName');
   var email = document.getElementById('contactEmail');
   var msg = document.getElementById('contactMsg');
+  var email_sent_animation = document.getElementById("email_sent");
   var nameVal = nameValidate(name);
   var emailVal = emailValidate(email.value);
   var msgVal = messageValidate(msg);
@@ -240,15 +241,17 @@ function msgSubmit(){
       loop: true,
     });
     type;
-    document.getElementById("email_sent").setAttribute("style","display:block")
+    email_sent_animation.style.display = "block";
     emailjs.send('service_w7g3ufj','template_4dntxaq',reqParams).then(function(res){
       if(res.status == 200){
         modal.style.display = 'none';
         emailModal.style.display = 'block';
+        email_sent_animation.style.display = "none";
       }else{
         modal.style.display = 'none';
         document.getElementById("Email_message").innerHTML = "Sorry Email cannot be send at this time";
         document.getElementById("Email_message").setAttribute("style","color:red")
+        email_sent_animation.style.display = "none";
       }
     })
   }
