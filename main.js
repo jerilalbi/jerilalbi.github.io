@@ -27,6 +27,28 @@ var typing=new Typed(".job-text", {
   loop: true,
 });
 
+//experience 
+async function experience(){
+  var response = await fetch("assets/data/experience.json");
+  var baseData = await response.json();
+  var exp_data = baseData.data;
+  var experience_content = '';
+
+  exp_data.map(function(res){
+    experience_content +=
+    `
+    <a href="${res.company_link}" id="experience_company_link">
+    <div class="experience-box" style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${res.company_logo});">
+            <span class="experience-post">${res.post}</span>
+            <span class="experience-duration">${res.duration}</span>
+          </div>
+    </a>
+    ` ;
+  })
+  document.getElementById('experience_container').innerHTML = experience_content
+}
+experience();
+
 //project type text animation
 function projectTypeAnime(id){
   var projectType = document.querySelector(`${id}`);
