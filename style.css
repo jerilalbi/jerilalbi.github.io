@@ -93,8 +93,9 @@ a{
     font-weight: 700;
     font-size: var(--big-font);
     /* color: white; */
-    background: linear-gradient(
-    to bottom, 	#0057b7,#0057b7, #ffd700, #ffd700);
+    /* background: linear-gradient(
+    to bottom, 	#0057b7,#0057b7, #ffd700, #ffd700); */
+    background: linear-gradient(to bottom, #FF9933,#FF9933,#FF9933, #FFFFFF,  #138808,#138808,  #138808);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
