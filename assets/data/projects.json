@@ -5,21 +5,21 @@
             "app_info" : "WALLPAPER APP",
             "app_desc" : "WalPer produces a never-ending stream of stunning wallpapers - for any device.",
             "img" : "assets/images/mob_project1.png",
-            "more_info" : "https://play.google.com/store/apps/details?id=com.jerilalbi.wallper_pro"
+            "more_info" : "https://github.com/jerilalbi/WalPer"
         },
         {
             "app_name" : "QUIZME",
             "app_info" : "QUIZ APP",
             "app_desc" : "QuizMe is a coding related quiz application. The state management used is provider",
             "img" : "assets/images/mob_project2.png",
-            "more_info" : "https://github.com/Jeril-albi/Quiz-App"
+            "more_info" : "https://github.com/jerilalbi/Quiz-App"
         },
         {
             "app_name" : "COWIN ALERT",
             "app_info" : "SLOT INFORM APP",
             "app_desc" : "Cowin Alert gives the number of available vaccine slots in your area.",
             "img" : "assets/images/mob_project3.png",
-            "more_info" : "https://github.com/Jeril-albi/vaccine-notifier"
+            "more_info" : "https://github.com/jerilalbi/vaccine-notifier"
         }
     ],
 
@@ -29,14 +29,14 @@
             "website_info" : "TRAVEL WEBSITE",
             "website_desc" : "Voyage helps in gathering travel information, and opinions of travel-related content.",
             "img" : "assets/images/web_project1.png",
-            "more_info" : "https://github.com/Jeril-albi/Travel-website"
+            "more_info" : "https://github.com/jerilalbi/Travel-website"
         },
         {
             "website_name" : "JA.",
             "website_info" : "PORTFOLIO WEBSITE",
             "website_desc" : "Personal portfolio website of my own to show case my skills and projects.",
             "img" : "assets/images/web_project2.png",
-            "more_info" : "https://jerilalbi.in"
+            "more_info" : "https://jerilalbi.github.io/"
         }
     ]
 }
