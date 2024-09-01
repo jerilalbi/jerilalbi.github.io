@@ -5,6 +5,7 @@ import HomeImage from "../components/homeImg";
 import HomeIconBox from "../components/homeIconBox";
 import HomeNameSec from "../components/homeName";
 import HomeBgNum from "../components/homeBgNum";
+import HomeSideSec from "../components/homeSideSec";
 
 function Home() {
   return (
@@ -28,6 +29,7 @@ function Home() {
         sx={{ position: "relative", bgcolor: "primary.main", height: "100vh" }}
       >
         <HomeBgNum number="2" position="left" />
+        <HomeSideSec />
       </Container>
     </Box>
   );

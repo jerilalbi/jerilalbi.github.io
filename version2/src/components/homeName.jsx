@@ -56,7 +56,6 @@ export default HomeNameSec;
 
 const homeNameBx = {
   position: "absolute",
-  left: "13%",
   top: "50%",
   left: "20%",
   color: "white",
