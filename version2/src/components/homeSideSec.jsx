@@ -30,7 +30,7 @@ function HomeSideSec() {
           sx={{
             color: "white",
             fontWeight: "800",
-            fontSize: "13px",
+            fontSize: "15px",
             lineHeight: "30px",
           }}
         >
@@ -43,7 +43,7 @@ function HomeSideSec() {
           sx={{
             color: "white",
             fontWeight: "800",
-            fontSize: "13px",
+            fontSize: "15px",
             lineHeight: "30px",
           }}
         >
@@ -57,7 +57,7 @@ function HomeSideSec() {
                 listStylePosition: "inside",
                 color: "white",
                 fontWeight: "700",
-                textAlign: "center",
+                fontSize: "14px",
               }}
             >
               {val}
@@ -83,7 +83,6 @@ const parentBox = {
 
 const contentBox = {
   bgcolor: "rgba(255, 255, 255, 0.04)",
-  // height: "200px",
   width: "250px",
   borderRadius: "10px",
   boxSizing: "border-box",
