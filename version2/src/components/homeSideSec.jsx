@@ -71,7 +71,6 @@ function HomeSideSec() {
 
 const parentBox = {
   position: "absolute",
-  // bgcolor: "red",
   display: "flex",
   justifyContent: "space-evenly",
   flexDirection: "column",
