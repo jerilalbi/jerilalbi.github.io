@@ -13,7 +13,6 @@ const Project = forwardRef((props, ref) => {
         flexDirection: "column",
         height: "700px",
         width: "100%",
-        // bgcolor: "green",
         padding: "12px",
         paddingX: "72px",
         boxSizing: "border-box",

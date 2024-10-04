@@ -5,7 +5,6 @@ function ProjectSideSec() {
   return (
     <Box
       sx={{
-        // bgcolor: "red",
         width: "200px",
         display: "flex",
         flexDirection: "column",
