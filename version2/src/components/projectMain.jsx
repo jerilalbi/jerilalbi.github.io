@@ -1,14 +1,90 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./projectCard";
-
-const projectCards = {
-  card1: "/images/cards/card1.png",
-  card2: "/images/cards/card2.png",
-  card3: "/images/cards/card3.png",
-};
+import {
+  card1,
+  card2,
+  card3,
+  dotNetLogo,
+  flutterLogo,
+  htmlLogo,
+  nodeLogo,
+  reactLogo,
+} from "./image_helper";
 
 function ProjectMain() {
+  const projectCards = {
+    card1: card1,
+    card2: card2,
+    card3: card3,
+  };
+
+  const projectFormation = [3, 1, 2];
+
+  const [boxes, setBoxes] = useState([
+    {
+      id: 1,
+      bgImg: projectCards.card1,
+      projectImg: flutterLogo,
+      text: "WalPer",
+    },
+    {
+      id: 2,
+      bgImg: projectCards.card2,
+      projectImg: htmlLogo,
+      text: "Voyage",
+    },
+    {
+      id: 3,
+      bgImg: projectCards.card3,
+      projectImg: dotNetLogo,
+      text: "Cafe",
+    },
+    {
+      id: 4,
+      bgImg: projectCards.card1,
+      projectImg: flutterLogo,
+      text: "QuizMe",
+    },
+    {
+      id: 5,
+      bgImg: projectCards.card1,
+      projectImg: flutterLogo,
+      text: "ScanCart",
+    },
+    {
+      id: 6,
+      bgImg: projectCards.card2,
+      projectImg: nodeLogo,
+      text: "Stock Bot",
+    },
+    {
+      id: 7,
+      bgImg: projectCards.card3,
+      projectImg: reactLogo,
+      text: "Portfolio",
+    },
+  ]);
+
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData("draggedBoxIndex", index);
+  };
+
+  const handleDrop = (e, index) => {
+    const draggedBoxIndex = e.dataTransfer.getData("draggedBoxIndex");
+    if (draggedBoxIndex !== index) {
+      const updatedBoxes = [...boxes];
+      const temp = updatedBoxes[draggedBoxIndex];
+      updatedBoxes[draggedBoxIndex] = updatedBoxes[index];
+      updatedBoxes[index] = temp;
+      setBoxes(updatedBoxes);
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Box sx={projectMainBx}>
       <Box
@@ -21,9 +97,13 @@ function ProjectMain() {
         }}
       >
         <ProjectCard
-          bgImg={projectCards.card1}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
+          bgImg={boxes[0].bgImg}
+          img={boxes[0].projectImg}
+          text={boxes[0].text}
+          draggable
+          onDragStart={(e) => handleDragStart(e, 0)}
+          onDragOver={handleDragOver}
+          onDrop={(e) => handleDrop(e, 0)}
         />
       </Box>
       <Box
@@ -35,21 +115,17 @@ function ProjectMain() {
           bottom: "200px",
         }}
       >
-        <ProjectCard
-          bgImg={projectCards.card2}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
-        />
-        <ProjectCard
-          bgImg={projectCards.card3}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
-        />
-        <ProjectCard
-          bgImg={projectCards.card1}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
-        />
+        {boxes.slice(1, 1 + projectFormation[0]).map((box, index) => (
+          <ProjectCard
+            bgImg={box.bgImg}
+            img={box.projectImg}
+            text={box.text}
+            draggable
+            onDragStart={(e) => handleDragStart(e, index + 1)}
+            onDragOver={handleDragOver}
+            onDrop={(e) => handleDrop(e, index + 1)}
+          />
+        ))}
       </Box>
       <Box
         sx={{
@@ -60,11 +136,17 @@ function ProjectMain() {
           top: "150px",
         }}
       >
-        <ProjectCard
-          bgImg={projectCards.card1}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
-        />
+        {boxes.slice(4, 4 + projectFormation[1]).map((box, index) => (
+          <ProjectCard
+            bgImg={box.bgImg}
+            img={box.projectImg}
+            text={box.text}
+            draggable
+            onDragStart={(e) => handleDragStart(e, index + 4)}
+            onDragOver={handleDragOver}
+            onDrop={(e) => handleDrop(e, index + 4)}
+          />
+        ))}
       </Box>
       <Box
         sx={{
@@ -75,16 +157,17 @@ function ProjectMain() {
           top: "50px",
         }}
       >
-        <ProjectCard
-          bgImg={projectCards.card2}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
-        />
-        <ProjectCard
-          bgImg={projectCards.card3}
-          img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
-          text="ScanCart"
-        />
+        {boxes.slice(5, 5 + projectFormation[2]).map((box, index) => (
+          <ProjectCard
+            bgImg={box.bgImg}
+            img={box.projectImg}
+            text={box.text}
+            draggable
+            onDragStart={(e) => handleDragStart(e, index + 5)}
+            onDragOver={handleDragOver}
+            onDrop={(e) => handleDrop(e, index + 5)}
+          />
+        ))}
       </Box>
     </Box>
   );

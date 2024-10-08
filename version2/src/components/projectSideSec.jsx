@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Tooltip, Typography } from "@mui/material";
 import React from "react";
 
 function ProjectSideSec() {
@@ -25,7 +25,19 @@ function ProjectSideSec() {
           sx={{ height: "100%", width: "90%", objectFit: "contain" }}
         ></Box>
       </Box>
-      <Box sx={sideBoxes}></Box>
+      <Tooltip title="Skills" placement="right">
+        <Box sx={sideBoxes}>
+          <Typography
+            sx={{
+              color: "white",
+              fontWeight: "750",
+              fontSize: "40px",
+            }}
+          >
+            {"</>"}
+          </Typography>
+        </Box>
+      </Tooltip>
     </Box>
   );
 }
@@ -40,4 +52,8 @@ const sideBoxes = {
   boxShadow: "0 0 5px 0px white",
   objectFit: "cover",
   objectPosition: "top",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
 };
