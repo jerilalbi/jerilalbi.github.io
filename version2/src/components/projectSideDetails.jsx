@@ -1,8 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
-import React from "react";
+import React, { useContext } from "react";
+import { BoxContext } from "../providers/boxProvider";
 
 function ProjectSideDetails() {
+  const { boxes, activeBox } = useContext(BoxContext);
   return (
     <Box
       sx={{
@@ -21,7 +23,7 @@ function ProjectSideDetails() {
       <Box sx={{ display: "flex" }}>
         <Box
           component={"img"}
-          src="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"
+          src={boxes[activeBox].projectImg}
           sx={{
             height: "80px",
             width: "80px",
@@ -48,7 +50,7 @@ function ProjectSideDetails() {
               lineHeight: "25px",
             }}
           >
-            ScanCart
+            {boxes[activeBox].text}
           </Typography>
           <Box sx={{ display: "flex" }}>
             <Typography

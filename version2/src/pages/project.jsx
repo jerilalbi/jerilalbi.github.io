@@ -3,6 +3,7 @@ import React, { forwardRef } from "react";
 import ProjectSideSec from "../components/projectSideSec";
 import ProjectMain from "../components/projectMain";
 import ProjectSideDetails from "../components/projectSideDetails";
+import { BoxProvider } from "../providers/boxProvider";
 
 const Project = forwardRef((props, ref) => {
   return (
@@ -38,8 +39,10 @@ const Project = forwardRef((props, ref) => {
         }}
       >
         <ProjectSideSec />
-        <ProjectMain />
-        <ProjectSideDetails />
+        <BoxProvider>
+          <ProjectMain />
+          <ProjectSideDetails />
+        </BoxProvider>
       </Box>
     </Box>
   );

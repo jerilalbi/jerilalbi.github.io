@@ -1,70 +1,12 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import ProjectCard from "./projectCard";
-import {
-  card1,
-  card2,
-  card3,
-  dotNetLogo,
-  flutterLogo,
-  htmlLogo,
-  nodeLogo,
-  reactLogo,
-} from "./image_helper";
+import { BoxContext } from "../providers/boxProvider";
 
 function ProjectMain() {
-  const projectCards = {
-    card1: card1,
-    card2: card2,
-    card3: card3,
-  };
-
   const projectFormation = [3, 1, 2];
 
-  const [boxes, setBoxes] = useState([
-    {
-      id: 1,
-      bgImg: projectCards.card1,
-      projectImg: flutterLogo,
-      text: "WalPer",
-    },
-    {
-      id: 2,
-      bgImg: projectCards.card2,
-      projectImg: htmlLogo,
-      text: "Voyage",
-    },
-    {
-      id: 3,
-      bgImg: projectCards.card3,
-      projectImg: dotNetLogo,
-      text: "Cafe",
-    },
-    {
-      id: 4,
-      bgImg: projectCards.card1,
-      projectImg: flutterLogo,
-      text: "QuizMe",
-    },
-    {
-      id: 5,
-      bgImg: projectCards.card1,
-      projectImg: flutterLogo,
-      text: "ScanCart",
-    },
-    {
-      id: 6,
-      bgImg: projectCards.card2,
-      projectImg: nodeLogo,
-      text: "Stock Bot",
-    },
-    {
-      id: 7,
-      bgImg: projectCards.card3,
-      projectImg: reactLogo,
-      text: "Portfolio",
-    },
-  ]);
+  const { activeBox, setActiveBox, boxes, setBoxes } = useContext(BoxContext);
 
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("draggedBoxIndex", index);
@@ -77,6 +19,11 @@ function ProjectMain() {
       const temp = updatedBoxes[draggedBoxIndex];
       updatedBoxes[draggedBoxIndex] = updatedBoxes[index];
       updatedBoxes[index] = temp;
+      if (activeBox === Number(draggedBoxIndex)) {
+        setActiveBox(index);
+      } else if (activeBox === index) {
+        setActiveBox(Number(draggedBoxIndex));
+      }
       setBoxes(updatedBoxes);
     }
   };
@@ -84,6 +31,24 @@ function ProjectMain() {
   const handleDragOver = (e) => {
     e.preventDefault();
   };
+
+  const handleArrowKey = useCallback(
+    (e) => {
+      if (e.key === "ArrowRight" && activeBox < boxes.length - 1) {
+        setActiveBox((prevIndex) => prevIndex + 1);
+      } else if (e.key === "ArrowLeft" && activeBox > 0) {
+        setActiveBox((prevIndex) => prevIndex - 1);
+      }
+    },
+    [activeBox, boxes.length, setActiveBox]
+  );
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleArrowKey);
+    return () => {
+      window.removeEventListener("keydown", handleArrowKey);
+    };
+  }, [handleArrowKey]);
 
   return (
     <Box sx={projectMainBx}>
@@ -104,6 +69,8 @@ function ProjectMain() {
           onDragStart={(e) => handleDragStart(e, 0)}
           onDragOver={handleDragOver}
           onDrop={(e) => handleDrop(e, 0)}
+          isSelected={0 === activeBox}
+          onClick={() => setActiveBox(0)}
         />
       </Box>
       <Box
@@ -124,6 +91,8 @@ function ProjectMain() {
             onDragStart={(e) => handleDragStart(e, index + 1)}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index + 1)}
+            isSelected={index + 1 === activeBox}
+            onClick={() => setActiveBox(index + 1)}
           />
         ))}
       </Box>
@@ -145,6 +114,8 @@ function ProjectMain() {
             onDragStart={(e) => handleDragStart(e, index + 4)}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index + 4)}
+            isSelected={index + 4 === activeBox}
+            onClick={() => setActiveBox(index + 4)}
           />
         ))}
       </Box>
@@ -166,6 +137,8 @@ function ProjectMain() {
             onDragStart={(e) => handleDragStart(e, index + 5)}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index + 5)}
+            isSelected={index + 5 === activeBox}
+            onClick={() => setActiveBox(index + 5)}
           />
         ))}
       </Box>
