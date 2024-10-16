@@ -1,7 +1,25 @@
 import { Box, Tooltip, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { BoxContext } from "../providers/boxProvider";
 
 function ProjectSideSec() {
+  const { openProject } = useContext(BoxContext);
+
+  const sideBoxes = {
+    height: "100px",
+    width: "100px",
+    bgcolor: "secondary.main",
+    borderRadius: "20px",
+    boxShadow: openProject ? "none" : "0 0 5px 0px white",
+    objectFit: "cover",
+    objectPosition: "top",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "pointer",
+    transition: "boxShadow 0.5s linear",
+  };
+
   return (
     <Box
       sx={{
@@ -41,19 +59,4 @@ function ProjectSideSec() {
     </Box>
   );
 }
-
 export default ProjectSideSec;
-
-const sideBoxes = {
-  height: "100px",
-  width: "100px",
-  bgcolor: "secondary.main",
-  borderRadius: "20px",
-  boxShadow: "0 0 5px 0px white",
-  objectFit: "cover",
-  objectPosition: "top",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  cursor: "pointer",
-};

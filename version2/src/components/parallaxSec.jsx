@@ -1,6 +1,10 @@
 import { Box } from "@mui/material";
+import { useContext } from "react";
+import { ScrollContext } from "../providers/scrollProvider";
 
-function ParallaxSec({ children, scroll }) {
+function ParallaxSec({ children }) {
+  const { scrollPos } = useContext(ScrollContext);
+
   return (
     <Box
       sx={{
@@ -9,7 +13,7 @@ function ParallaxSec({ children, scroll }) {
         bgcolor: "secondary.main",
         position: "absolute",
         top: "100vh",
-        transform: `translateY(-${Math.min(scroll, 0)}px)`,
+        transform: `translateY(-${Math.min(scrollPos, 0)}px)`,
         zIndex: "1000",
         transition: "transform 0.1s ease-out",
       }}

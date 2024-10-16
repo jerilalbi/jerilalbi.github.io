@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import Header from "../components/header";
 import { Box, Container } from "@mui/material";
 import HomeImage from "../components/homeImg";
@@ -6,9 +6,25 @@ import HomeIconBox from "../components/homeIconBox";
 import HomeNameSec from "../components/homeName";
 import HomeBgNum from "../components/homeBgNum";
 import HomeSideSec from "../components/homeSideSec";
+import { ScrollContext } from "../providers/scrollProvider";
 
 function Home(props) {
-  const opacity = Math.max(0, props.scroll / 8 / 100);
+  const { scrollPos, setScrollPos } = useContext(ScrollContext);
+
+  const opacity = Math.max(0, scrollPos / 8 / 100);
+
+  const handleScroll = useCallback(
+    (e) => {
+      setScrollPos(window.scrollY);
+    },
+    [setScrollPos]
+  );
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   return (
     <Box
       sx={{

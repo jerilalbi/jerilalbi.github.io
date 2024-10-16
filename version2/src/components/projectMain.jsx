@@ -73,6 +73,7 @@ function ProjectMain() {
           onClick={() => setActiveBox(0)}
         />
       </Box>
+      {console.log("test project main")}
       <Box
         sx={{
           position: "absolute",

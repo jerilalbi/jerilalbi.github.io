@@ -14,6 +14,7 @@ export const BoxContext = createContext();
 
 export const BoxProvider = ({ children }) => {
   const [activeBox, setActiveBox] = useState(0);
+  const [openProject, setOpenProject] = useState(false);
   const [boxes, setBoxes] = useState([
     {
       id: 1,
@@ -60,7 +61,16 @@ export const BoxProvider = ({ children }) => {
   ]);
 
   return (
-    <BoxContext.Provider value={{ activeBox, setActiveBox, boxes, setBoxes }}>
+    <BoxContext.Provider
+      value={{
+        activeBox,
+        setActiveBox,
+        boxes,
+        setBoxes,
+        openProject,
+        setOpenProject,
+      }}
+    >
       {children}
     </BoxContext.Provider>
   );

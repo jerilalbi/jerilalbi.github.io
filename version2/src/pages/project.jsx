@@ -4,6 +4,7 @@ import ProjectSideSec from "../components/projectSideSec";
 import ProjectMain from "../components/projectMain";
 import ProjectSideDetails from "../components/projectSideDetails";
 import { BoxProvider } from "../providers/boxProvider";
+import ProjectDetails from "../components/projectDetails";
 
 const Project = forwardRef((props, ref) => {
   return (
@@ -38,10 +39,11 @@ const Project = forwardRef((props, ref) => {
           flex: "1",
         }}
       >
-        <ProjectSideSec />
         <BoxProvider>
+          <ProjectSideSec />
           <ProjectMain />
           <ProjectSideDetails />
+          <ProjectDetails />
         </BoxProvider>
       </Box>
     </Box>
