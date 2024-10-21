@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useRef, useState } from "react";
 import {
   card1,
   card2,
@@ -10,9 +10,11 @@ import {
   reactLogo,
 } from "../components/image_helper";
 
-export const BoxContext = createContext();
+export const ProjectContext = createContext();
 
-export const BoxProvider = ({ children }) => {
+export const ProjectProvider = ({ children }) => {
+  const projectImgSecRef = useRef(null);
+  const projectTextSecRef = useRef(null);
   const [activeBox, setActiveBox] = useState(0);
   const [openProject, setOpenProject] = useState(false);
   const [boxes, setBoxes] = useState([
@@ -61,7 +63,7 @@ export const BoxProvider = ({ children }) => {
   ]);
 
   return (
-    <BoxContext.Provider
+    <ProjectContext.Provider
       value={{
         activeBox,
         setActiveBox,
@@ -69,9 +71,11 @@ export const BoxProvider = ({ children }) => {
         setBoxes,
         openProject,
         setOpenProject,
+        projectImgSecRef,
+        projectTextSecRef,
       }}
     >
       {children}
-    </BoxContext.Provider>
+    </ProjectContext.Provider>
   );
 };

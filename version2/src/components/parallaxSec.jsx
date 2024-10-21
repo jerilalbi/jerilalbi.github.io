@@ -13,6 +13,7 @@ function ParallaxSec({ children }) {
         bgcolor: "secondary.main",
         position: "absolute",
         top: "100vh",
+        overflowX: "hidden",
         transform: `translateY(-${Math.min(scrollPos, 0)}px)`,
         zIndex: "1000",
         transition: "transform 0.1s ease-out",

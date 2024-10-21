@@ -1,12 +1,13 @@
 import { Box } from "@mui/material";
 import React, { useCallback, useContext, useEffect } from "react";
 import ProjectCard from "./projectCard";
-import { BoxContext } from "../providers/boxProvider";
+import { ProjectContext } from "../providers/ProjectProvider";
 
 function ProjectMain() {
   const projectFormation = [3, 1, 2];
 
-  const { activeBox, setActiveBox, boxes, setBoxes } = useContext(BoxContext);
+  const { activeBox, setActiveBox, boxes, setBoxes } =
+    useContext(ProjectContext);
 
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("draggedBoxIndex", index);

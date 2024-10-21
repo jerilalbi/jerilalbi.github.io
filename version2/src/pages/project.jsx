@@ -3,8 +3,9 @@ import React, { forwardRef } from "react";
 import ProjectSideSec from "../components/projectSideSec";
 import ProjectMain from "../components/projectMain";
 import ProjectSideDetails from "../components/projectSideDetails";
-import { BoxProvider } from "../providers/boxProvider";
-import ProjectDetails from "../components/projectDetails";
+import { ProjectProvider } from "../providers/ProjectProvider";
+import ProjectDetailsImg from "../components/projectDetailsImg";
+import ProjectDetailsText from "../components/projectDetailsText";
 
 const Project = forwardRef((props, ref) => {
   return (
@@ -39,12 +40,13 @@ const Project = forwardRef((props, ref) => {
           flex: "1",
         }}
       >
-        <BoxProvider>
+        <ProjectProvider>
           <ProjectSideSec />
           <ProjectMain />
           <ProjectSideDetails />
-          <ProjectDetails />
-        </BoxProvider>
+          <ProjectDetailsImg />
+          <ProjectDetailsText />
+        </ProjectProvider>
       </Box>
     </Box>
   );

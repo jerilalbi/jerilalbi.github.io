@@ -1,9 +1,9 @@
 import { Box, Tooltip, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import { BoxContext } from "../providers/boxProvider";
+import { ProjectContext } from "../providers/ProjectProvider";
 
 function ProjectSideSec() {
-  const { openProject } = useContext(BoxContext);
+  const { openProject } = useContext(ProjectContext);
 
   const sideBoxes = {
     height: "100px",

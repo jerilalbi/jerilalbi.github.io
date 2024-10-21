@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
 import React, { useContext, useEffect, useState } from "react";
-import { BoxContext } from "../providers/boxProvider";
+import { ProjectContext } from "../providers/ProjectProvider";
 
 function ProjectSideDetails() {
-  const { boxes, activeBox, setOpenProject } = useContext(BoxContext);
+  const { boxes, activeBox, setOpenProject } = useContext(ProjectContext);
   const [animation, setAnimation] = useState(false);
 
   useEffect(() => {
@@ -12,12 +12,6 @@ function ProjectSideDetails() {
     const timeOut = setTimeout(() => {
       setAnimation(true);
     }, 500);
-
-    // const handleClickOutside = (event) => {
-    //   if (growBoxRef.current && !growBoxRef.current.contains(event.target)) {
-    //     setReadmore(false);
-    //   }
-    // };
 
     return () => clearTimeout(timeOut);
   }, [activeBox]);
