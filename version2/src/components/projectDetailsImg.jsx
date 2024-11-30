@@ -32,7 +32,8 @@ function ProjectDetailsImg() {
           display: "grid",
           height: "100%",
           gridTemplateColumns: "1fr 1fr 1fr",
-          gridTemplateRows: "repeat(3, 1fr)",
+          gridAutoRows: "200px",
+          overflowY: "auto",
           gap: "5px",
         }}
       >
@@ -41,6 +42,7 @@ function ProjectDetailsImg() {
             sx={{
               // gridRow: `span 2`,
               gridRow: `span ${randomNo(1, 3)}`,
+              gridColumn: `span ${randomNo(1, 2)}`,
               borderRadius: "15px",
               background: `url(${img})`,
               backgroundSize: "cover",
