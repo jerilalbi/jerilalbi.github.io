@@ -1,42 +1,62 @@
 {
-    "mobile" : [
+    "mobile": [
         {
-            "app_name" : "WALPER",
-            "app_info" : "WALLPAPER APP",
-            "app_desc" : "WalPer produces a never-ending stream of stunning wallpapers - for any device.",
-            "img" : "assets/images/mob_project1.png",
-            "more_info" : "https://github.com/jerilalbi/WalPer"
+            "app_name": "SCANCART",
+            "app_info": "SHOPPING APP",
+            "app_desc": "ScanCart is a Flutter app for barcode scanning, virtual carts, and seamless in-store payments—skip the queues.",
+            "img": "assets/images/mob_project5.png",
+            "more_info": "https://github.com/jerilalbi/ScanCart"
         },
         {
-            "app_name" : "QUIZME",
-            "app_info" : "QUIZ APP",
-            "app_desc" : "QuizMe is a coding related quiz application. The state management used is provider",
-            "img" : "assets/images/mob_project2.png",
-            "more_info" : "https://github.com/jerilalbi/Quiz-App"
+            "app_name": "WALPER",
+            "app_info": "WALLPAPER APP",
+            "app_desc": "WalPer produces a never-ending stream of stunning wallpapers - for any device.",
+            "img": "assets/images/mob_project1.png",
+            "more_info": "https://github.com/jerilalbi/WalPer"
         },
         {
-            "app_name" : "COWIN ALERT",
-            "app_info" : "SLOT INFORM APP",
-            "app_desc" : "Cowin Alert gives the number of available vaccine slots in your area.",
-            "img" : "assets/images/mob_project3.png",
-            "more_info" : "https://github.com/jerilalbi/vaccine-notifier"
+            "app_name": "QUIZME",
+            "app_info": "QUIZ APP",
+            "app_desc": "QuizMe is a coding related quiz application. The state management used is provider",
+            "img": "assets/images/mob_project2.png",
+            "more_info": "https://github.com/jerilalbi/Quiz-App"
+        },
+        {
+            "app_name": "STOCK ALERT",
+            "app_info": "TELEGRAM BOT",
+            "app_desc": "A Telegram bot that provides stock alerts by scraping the Chartink website.",
+            "img": "assets/images/mob_project4.png",
+            "more_info": "https://github.com/jerilalbi/stock-alert-telegram-bot"
+        },
+        {
+            "app_name": "COWIN ALERT",
+            "app_info": "SLOT INFORM APP",
+            "app_desc": "Cowin Alert gives the number of available vaccine slots in your area.",
+            "img": "assets/images/mob_project3.png",
+            "more_info": "https://github.com/jerilalbi/vaccine-notifier"
         }
     ],
-
-    "web" : [
+    "web": [
         {
-            "website_name" : "VOYAGE",
-            "website_info" : "TRAVEL WEBSITE",
-            "website_desc" : "Voyage helps in gathering travel information, and opinions of travel-related content.",
-            "img" : "assets/images/web_project1.png",
-            "more_info" : "https://github.com/jerilalbi/Travel-website"
+            "website_name": "VOYAGE",
+            "website_info": "TRAVEL WEBSITE",
+            "website_desc": "Voyage helps in gathering travel information, and opinions of travel-related content.",
+            "img": "assets/images/web_project1.png",
+            "more_info": "https://github.com/jerilalbi/Travel-website"
         },
         {
-            "website_name" : "JA.",
-            "website_info" : "PORTFOLIO WEBSITE",
-            "website_desc" : "Personal portfolio website of my own to show case my skills and projects.",
-            "img" : "assets/images/web_project2.png",
-            "more_info" : "https://jerilalbi.github.io/"
+            "website_name": "CAFE",
+            "website_info": "CAFE DESKTOP APP",
+            "website_desc": "A .NET app for café orders: Customers get QR codes, Employees scan for details, Admins manage operations.",
+            "img": "assets/images/web_project3.png",
+            "more_info": "https://github.com/jerilalbi/coffee-shop"
+        },
+        {
+            "website_name": "JA.",
+            "website_info": "PORTFOLIO WEBSITE",
+            "website_desc": "Personal portfolio website of my own to show case my skills and projects.",
+            "img": "assets/images/web_project2.png",
+            "more_info": "https://jerilalbi.github.io/"
         }
     ]
 }
