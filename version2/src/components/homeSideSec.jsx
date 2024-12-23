@@ -35,7 +35,7 @@ function HomeSideSec() {
           }}
         >
           SKILLS
-          <RadarGraph />
+          <RadarGraph id = "home" height = "200" width = "200" logoSize = {15} />
         </Typography>
       </Box>
       <Box sx={contentBox}>

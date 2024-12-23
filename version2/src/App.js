@@ -4,6 +4,7 @@ import Home from './pages/home';
 import Project from './pages/project';
 import React, { useRef } from "react";
 import { ScrollProvider } from './providers/scrollProvider';
+import Skills from './pages/skills';
 
 function App() {
   const projectSecRef = useRef(null);
@@ -15,6 +16,7 @@ function App() {
         <Home navBarRef={navBarRefs} />
         <ParallaxSec>
           <Project ref={projectSecRef} />
+          <Skills />
         </ParallaxSec>
       </ScrollProvider>
     </div>

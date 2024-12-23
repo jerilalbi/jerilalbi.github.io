@@ -111,8 +111,6 @@ function getNoRows(imgLen){
     }
   },[openProject])
 
-  console.log("called ");
-
   return (
     <Box
       ref={projectImgSecRef}

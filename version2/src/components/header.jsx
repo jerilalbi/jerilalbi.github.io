@@ -10,7 +10,7 @@ function Header(props) {
       path: "/",
     },
     {
-      name: "ABOUT",
+      name: "PROJECTS",
       path: "/",
     },
     {

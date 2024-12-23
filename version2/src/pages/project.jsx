@@ -17,8 +17,6 @@ const Project = forwardRef((props, ref) => {
         height: "700px",
         width: "100%",
         padding: "12px",
-        paddingX: "72px",
-        boxSizing: "border-box",
       }}
     >
       <Typography

@@ -8,9 +8,10 @@ function ParallaxSec({ children }) {
   return (
     <Box
       sx={{
-        height: "100vh",
         width: "100%",
         bgcolor: "secondary.main",
+        paddingX: "72px",
+        boxSizing: "border-box",
         position: "absolute",
         top: "100vh",
         overflowX: "hidden",
