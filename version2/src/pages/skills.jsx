@@ -17,7 +17,8 @@ export default Skills
 
 const skillSec = {
     display: 'flex',
-    alignItems: "center", 
+    alignItems: "center",
+    justifyContent: "center",
     width: '100%',
     height: '80vh',
     marginY: "20px",
