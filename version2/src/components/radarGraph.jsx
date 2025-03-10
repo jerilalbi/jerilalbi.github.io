@@ -23,7 +23,7 @@ function RadarGraph(props) {
   );
 
   const data = {
-    labels: ["FLUTTER", "HTML", "PHP", ".NET", "NODE JS", "React JS", "MySQL"],
+    labels: ["FLUTTER", "HTML", "PHP", ".NET", "NODE JS", "React JS", "SQL"],
     datasets: [
       {
         label: "Skill",
@@ -68,13 +68,13 @@ function RadarGraph(props) {
   };
 
   const images = [
-    "https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
-    "https://www.php.net/images/logos/new-php-logo.png",
-    "https://cdn.icon-icons.com/icons2/2415/PNG/512/dot_net_original_logo_icon_146546.png",
-    "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png",
-    "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
-    "https://static-00.iconduck.com/assets.00/database-mysql-icon-923x1024-37xcgdyl.png",
+    "/images/skills/flutter.png",
+    "/images/skills/html.png",
+    "/images/skills/php.png",
+    "/images/skills/dotnet.png",
+    "/images/skills/nodejs.png",
+    "/images/skills/reactjs.png",
+    "/images/skills/sql.png",
   ]
 
   if (!imageCache.current.length) {

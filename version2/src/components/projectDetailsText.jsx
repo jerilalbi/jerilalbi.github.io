@@ -76,7 +76,7 @@ function ProjectDetailsText() {
           borderRadius: "0px 15px 15px 0",
           marginTop: "13px",
           paddingY: "10px",
-          paddingX: "20px",
+          paddingX: "30px",
           boxSizing: "border-box"
         }}
       >

@@ -1,0 +1,38 @@
+{
+    "experience": [
+        {
+            "title": "Mobile App Engineer\nIntern",
+            "duration": "APR 2022 - MAY 2022",
+            "bgImg": "https://images.unsplash.com/photo-1630442923896-244dd3717b35?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "companyLogo": "https://centrric.com/static/images/logo-jpg.jpg",
+            "companyName": "Centrric",
+            "imgFit": "contain"
+        }
+    ],
+    "education": [
+        {
+            "title": "BVoc in Software Development & System Administration",
+            "duration": "2021 - 2024",
+            "bgImg": "https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "companyLogo": "https://content3.jdmagicbox.com/comp/ernakulam/dc/0484px484.x484.090714174506.z9n6dc/catalogue/mes-college-alwaye-ernakulam-colleges-52si0qpwss.jpg",
+            "companyName": "MES College Marampally",
+            "imgFit": "cover"
+        },
+        {
+            "title": "Higher Secondary\nEducation",
+            "duration": "2019 - 2021",
+            "bgImg": "https://images.pexels.com/photos/16420235/pexels-photo-16420235/free-photo-of-man-sitting-with-laptop-at-library.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "companyLogo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh78796wHTE1XYd6iwvY-e0HoFgkvFfiuawSJQN4e3cfxcnqF_uupsPMdBdPED_Yr59-rIXF8Z6arzbodXtJjXqN4-_G5-2NJnEhyTgihTdYopMA57bgW3QVYo8ByObXkCX-_Kdhx1m_XIS/s400/3.jpg",
+            "companyName": "Paliyam GHSS",
+            "imgFit": "cover"
+        },
+        {
+            "title": "Secondary\nEducation",
+            "duration": "2018 - 2019",
+            "bgImg": "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFJJ_Z89ypl_mZhZiEiNelnAHNxNSX5XeLHg&s",
+            "companyName": "Maria Theresa Scrilli Public School",
+            "imgFit": "cover"
+        }
+    ]
+}

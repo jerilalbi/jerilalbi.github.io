@@ -7,37 +7,37 @@ function SkillDetails() {
     {
       title: "Flutter",
       value: "88",
-      img: "https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png",
+      img: "/images/skills/flutter.png",
     },
     {
       title: "HTML",
       value: "90",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png"
+      img: "/images/skills/html.png"
     },
     {
       title: "PHP",
       value: "75",
-      img: "https://www.php.net/images/logos/new-php-logo.png",
+      img: "/images/skills/php.png",
     },
     {
       title: ".Net",
       value: "71",
-      img: "https://cdn.icon-icons.com/icons2/2415/PNG/512/dot_net_original_logo_icon_146546.png",
+      img: "/images/skills/dotnet.png",
     },
     {
       title: "Node JS",
       value: "82",
-      img: "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png",
+      img: "/images/skills/nodejs.png",
     },
     {
       title: "React JS",
       value: "85",
-      img: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
+      img: "/images/skills/reactjs.png",
     },
     {
-      title: "MySQL",
+      title: "SQL",
       value: "82",
-      img: "https://static-00.iconduck.com/assets.00/database-mysql-icon-923x1024-37xcgdyl.png",
+      img: "/images/skills/sql.png",
     },
   ]
   return (
