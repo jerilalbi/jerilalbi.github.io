@@ -6,6 +6,7 @@ import React, { useRef } from "react";
 import { ScrollProvider } from './providers/scrollProvider';
 import Skills from './pages/skills';
 import TimeLine from './pages/timeline';
+import Footer from './pages/footer';
 
 function App() {
   const projectSecRef = useRef(null);
@@ -19,6 +20,7 @@ function App() {
           <Project ref={projectSecRef} />
           <Skills />
           <TimeLine />
+          <Footer />
         </ParallaxSec>
       </ScrollProvider>
     </div>

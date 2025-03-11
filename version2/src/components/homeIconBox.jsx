@@ -8,22 +8,22 @@ const iconBtns = [
 {
   "title" : "LinkedIn",
   "icon": <LinkedInIcon sx={{height: '30px', width: '30px',opacity: '.4',':hover':{opacity: '1'}}}/>,
-  "action": ""
+  "action": "https://www.linkedin.com/in/jeril-albi"
 },
 {
   "title" : "GitHub",
   "icon": <GitHubIcon sx={{height: '30px', width: '30px',opacity: '.4',':hover':{opacity: '1'}}}/>,
-  "action": ""
+  "action": "https://github.com/jerilalbi"
 },
 {
   "title" : "StackOverflow",
   "icon": <Icon sx={{opacity: '.4',':hover':{opacity: '1'}}}> <img alt='stackoverflow logo' height={'26px'} width={'26px'} src='/icons/stack-overflow.svg'></img> </Icon>,
-  "action": ""
+  "action": "https://stackoverflow.com/users/16711509/jeril-albi"
 },
 {
   "title" : "Download CV",
   "icon": <ArticleIcon sx={{height: '30px', width: '30px', opacity: '.4',':hover':{opacity: '1'}}}/>,
-  "action": ""
+  "action": "#"
 },
 ]
 
@@ -33,7 +33,9 @@ function HomeIconBox() {
       {
         iconBtns.map((iconBtns) => 
           <Tooltip title= {iconBtns.title} placement='right'>
-            <IconButton sx={{display: 'block', color: 'white', paddingY: '8px', paddingX: '0'}}>
+            <IconButton 
+            href={iconBtns.action}
+            sx={{display: 'block', color: 'white', paddingY: '8px', paddingX: '0'}}>
             {iconBtns.icon}
             </IconButton>
           </Tooltip>

@@ -48,6 +48,8 @@ function TimeLine() {
           width: "100%",
           height: "100%",
           overflowX: "auto",
+          scrollbarWidth: "none", 
+          "&::-webkit-scrollbar": { display: "none" } 
         }}>
           {
               activeData.map((exp) => (
