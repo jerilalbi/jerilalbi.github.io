@@ -52,7 +52,7 @@ export default HomeIconBox
 const iconBoxStyle = {
   position: 'absolute',
   padding: '1px',
-  marginX: '48px',
+  marginX: {sm: '48px', xs: '24px'},
   top: '50%',
   transform: 'translateY(-50%)',
   boxSizing: 'border-box',

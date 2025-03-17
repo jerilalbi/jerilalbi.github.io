@@ -3,9 +3,10 @@ import React from 'react'
 import SkillGraphSec from '../components/skillGraph'
 import SkillDetails from '../components/skillDetails'
 
-function Skills() {
+function Skills () {
   return (
     <Box
+    id="skills"
     sx={skillSec}>
       <SkillGraphSec/>
       <SkillDetails/>
@@ -17,6 +18,7 @@ export default Skills
 
 const skillSec = {
     display: 'flex',
+    flexDirection: {md: 'row', xs: 'column'},
     alignItems: "center",
     justifyContent: "center",
     width: '100%',
@@ -26,6 +28,7 @@ const skillSec = {
     backgroundImage: "linear-gradient(to top, rgba(2, 21, 38, 0.5), rgba(2, 21, 38, 1)), url('./images/Anfield.webp')",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPosition: "center",
     position: "relative",
     padding: "12px",
     boxSizing: "border-box",

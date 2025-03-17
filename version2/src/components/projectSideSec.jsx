@@ -24,7 +24,7 @@ function ProjectSideSec() {
     <Box
       sx={{
         width: "200px",
-        display: "flex",
+        display: {lg: "flex", xs: "none"},
         flexDirection: "column",
         justifyContent: "space-evenly",
       }}

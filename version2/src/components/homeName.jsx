@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import fontStyles  from "../theme/fontSize";
 
 const jobTitles = ["WEB DEVELOPER", "FLUTTER DEVELOPER"];
 
@@ -17,7 +18,7 @@ function HomeNameSec() {
     <Box sx={homeNameBx}>
       <Typography
         sx={{
-          fontSize: "150px",
+          fontSize: fontStyles.titleFont,
           fontWeight: "750",
           fontFamily: "Lato, sans-serif",
           lineHeight: ".6",
@@ -27,7 +28,7 @@ function HomeNameSec() {
       </Typography>
       <Typography
         sx={{
-          fontSize: "130px",
+          fontSize: fontStyles.subTitleFont,
           fontWeight: "750",
           fontFamily: "Lato, sans-serif",
           lineHeight: "1.2",

@@ -10,7 +10,7 @@ function ParallaxSec({ children }) {
       sx={{
         width: "100%",
         bgcolor: "secondary.main",
-        paddingX: "72px",
+        paddingX: {sm: "72px", xs: "24px"},
         boxSizing: "border-box",
         position: "absolute",
         top: "100vh",

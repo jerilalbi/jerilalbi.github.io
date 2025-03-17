@@ -115,12 +115,11 @@ function getNoRows(imgLen){
     <Box
       ref={projectImgSecRef}
       sx={{
-        width: "60%",
-        height: "650px",
-        position: "absolute",
+        flexBasis: {lg: "55%", md: "43%"},
+        flexShrink: 0,
+        height: {md: "auto", sm: "250px", xs: "300px"},
         bgcolor: "primary.main",
-        borderRadius: "15px 0 0 15px ",
-        marginTop: "15px",
+        borderRadius: {md: "15px 0 0 15px", xs: "0 0 15px 15px"},
         padding: "8px",
         boxSizing: "border-box",
         zIndex: "200",
@@ -132,8 +131,8 @@ function getNoRows(imgLen){
         sx={{
           display: "grid",
           height: "100%",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gridAutoRows: "207px",
+          gridTemplateColumns: {md: "1fr 1fr 1fr", xs: ".5fr .5fr .5fr"},
+          gridAutoRows: {md: "207px", xs: "150px"},
           overflowY: "auto",
           gap: "5px",
           gridAutoFlow: "dense",
@@ -142,7 +141,6 @@ function getNoRows(imgLen){
         { imgArrangement.length > 0 && projectImgs.map((img, index) => (
           <Box
             sx={{
-              // gridRow: `span 2`,
               gridRow: `span ${imgArrangement[index].rowspan}`,
               gridColumn: `span ${imgArrangement[index].colspan}`,
               borderRadius: "15px",
@@ -151,18 +149,6 @@ function getNoRows(imgLen){
             }}
           />
         ))}
-        {/* {projectImgs.map((img) => (
-          <Box
-            sx={{
-              // gridRow: `span 2`,
-              gridRow: `span ${randomNo(1, 3)}`,
-              gridColumn: `span ${randomNo(1, 2)}`,
-              borderRadius: "15px",
-              background: `url(${img})`,
-              backgroundSize: "cover",
-            }}
-          />
-        ))} */}
       </Box>
     </Box>
   );

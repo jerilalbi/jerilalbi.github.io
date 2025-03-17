@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 
-function RadarGraph(props) {
+function RadarGraph({id,width, height, logoSize, key}) {
   const imageCache = useRef([]);
 
   ChartJS.register(
@@ -88,11 +88,12 @@ function RadarGraph(props) {
   return (
     <div>
       <Radar 
-        id={props.id}
+        key={key}
+        id={id}
         data={data}
         options={options}
-        height={props.height}
-        width={props.width}
+        height={height}
+        width={width}
         plugins={[
           {
             id: "radar-graph",
@@ -109,9 +110,9 @@ function RadarGraph(props) {
                 const img = imageCache.current[i];
 
                 if (img.complete) {
-                  props.id === "skills" ?
-                  ctx.drawImage(img, x - 20, y - 10, props.logoSize, props.logoSize) :
-                  ctx.drawImage(img, x - 7, y - 5, props.logoSize, props.logoSize)
+                  id === "skills" ?
+                  ctx.drawImage(img, x - 20, y - 10, logoSize, logoSize) :
+                  ctx.drawImage(img, x - 7, y - 5, logoSize, logoSize)
                 }
               });
             },

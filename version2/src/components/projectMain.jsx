@@ -2,11 +2,13 @@ import { Box } from "@mui/material";
 import React, { useCallback, useContext, useEffect } from "react";
 import ProjectCard from "./projectCard";
 import { ProjectContext } from "../providers/ProjectProvider";
+import { useTheme } from "@emotion/react";
 
 function ProjectMain() {
   const projectFormation = [3, 1, 2];
+  const theme = useTheme();
 
-  const { activeBox, setActiveBox, boxes, setBoxes } =
+  const { activeBox, setActiveBox, boxes, setBoxes, setOpenProject } =
     useContext(ProjectContext);
 
   const handleDragStart = (e, index) => {
@@ -71,7 +73,12 @@ function ProjectMain() {
           onDragOver={handleDragOver}
           onDrop={(e) => handleDrop(e, 0)}
           isSelected={0 === activeBox}
-          onClick={() => setActiveBox(0)}
+          onClick={() => {
+            setActiveBox(0);
+            if(window.innerWidth < theme.breakpoints.values.md){
+              setOpenProject(true);
+            }
+          }}
         />
       </Box>
       <Box
@@ -93,7 +100,12 @@ function ProjectMain() {
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index + 1)}
             isSelected={index + 1 === activeBox}
-            onClick={() => setActiveBox(index + 1)}
+            onClick={() => {
+              setActiveBox(index + 1);
+              if(window.innerWidth < theme.breakpoints.values.md){
+                setOpenProject(true);
+              }
+            }}
           />
         ))}
       </Box>
@@ -103,7 +115,7 @@ function ProjectMain() {
           width: "100%",
           display: "flex",
           justifyContent: "space-evenly",
-          top: "150px",
+          top: {md: "150px", sm: "165px", xs: "180px"},
         }}
       >
         {boxes.slice(4, 4 + projectFormation[1]).map((box, index) => (
@@ -116,7 +128,12 @@ function ProjectMain() {
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index + 4)}
             isSelected={index + 4 === activeBox}
-            onClick={() => setActiveBox(index + 4)}
+            onClick={() => {
+              setActiveBox(index + 4);
+              if(window.innerWidth < theme.breakpoints.values.md){
+                setOpenProject(true);
+              }
+            }}
           />
         ))}
       </Box>
@@ -139,7 +156,12 @@ function ProjectMain() {
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index + 5)}
             isSelected={index + 5 === activeBox}
-            onClick={() => setActiveBox(index + 5)}
+            onClick={() => {
+              setActiveBox(index + 5);
+              if(window.innerWidth < theme.breakpoints.values.md){
+                setOpenProject(true);
+              }
+            }}
           />
         ))}
       </Box>
@@ -150,12 +172,13 @@ function ProjectMain() {
 export default ProjectMain;
 
 const projectMainBx = {
+  position: "relative",
   bgcolor: "blue",
   width: "825px",
   backgroundImage: "url('./images/project_bg.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  position: "relative",
+  backgroundPosition: "center",
   "&:after": {
     content: '""',
     position: "absolute",

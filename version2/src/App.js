@@ -10,7 +10,8 @@ import Footer from './pages/footer';
 
 function App() {
   const projectSecRef = useRef(null);
-  const navBarRefs = { projectSec: projectSecRef };
+  const skillSecRef = useRef(null);
+  const navBarRefs = { projectSec: projectSecRef, skillSec: skillSecRef };
 
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
         <Home navBarRef={navBarRefs} />
         <ParallaxSec>
           <Project ref={projectSecRef} />
-          <Skills />
+          <Skills ref={skillSecRef} />
           <TimeLine />
           <Footer />
         </ParallaxSec>

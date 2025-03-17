@@ -29,55 +29,26 @@ function ProjectDetailsText() {
   };
 
   return (
-    <Box
-      onClick={handleBoxClick}
-      sx={{
-        width: "33%",
-        height: "684px",
-        position: "absolute",
-        display: "flex",
-        flexDirection: "column",
-        boxSizing: "border-box",
-        zIndex: "150",
-        top: "30px",
-        right: "48px",
-        transition: "transform .3s linear",
-        transform: openProject ? "translateX(0)" : "translateX(150%)",
-      }}
-    >
       <Box
-        sx={{
-          width: "100%",
-          height: "22px",
-          textAlign: "end",
-        }}
-      >
-        <CloseIcon
-          sx={{
-            height: "22px",
-            width: "22px",
-            stroke: "white",
-            strokeWidth: "2",
-            cursor: "pointer",
-          }}
-          onClick={() => setOpenProject(false)}
-        />
-      </Box>
-      <Box
+        onClick={handleBoxClick}
         ref={projectTextSecRef}
         sx={{
+          position: "relative",
           display: 'flex',
           flexDirection: 'column',
-          height: "94.9%",
-          width: "100%",
+          flexBasis: {lg: "36%", md: "45%", sm: "50%"},
+          height: {md: "auto", sm: "400px", xs: "350px"},
           bgcolor: "primary.main",
           color: "white",
           textAlign: "start",
-          borderRadius: "0px 15px 15px 0",
-          marginTop: "13px",
+          borderRadius: {md: "0px 15px 15px 0", xs: "15px 15px 0 0"},
           paddingY: "10px",
-          paddingX: "30px",
-          boxSizing: "border-box"
+          // paddingX: {md: "30px",sm: "20px", xs: "15px"},
+          paddingX: "10px",
+          boxSizing: "border-box",
+          zIndex: "150",
+          transition: "transform .3s linear",
+          transform: openProject ? "translateX(0)" : "translateX(150%)",
         }}
       >
         <Box sx={{
@@ -120,9 +91,27 @@ function ProjectDetailsText() {
           Lorem Ipsum is simple dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown writer took a handful of words and scrambled them to make a type specimen book. Not only has it survived five centuries, but it has also made it into electronic typesetting (note, almost unchanged). It was popularised in the 1960s with the release of "Letraset", which contained passages of Lorem Ipsum, as did desktop software like "Aldus PageMaker", also using Lorem Ipsum.
         </Typography>
         </Box>
+        <Box
+        sx={{
+          position: "absolute",
+          right: "10px",
+          width: "100%",
+          height: "22px",
+          textAlign: "end",
+        }}
+      >
+        <CloseIcon
+          sx={{
+            height: "22px",
+            width: "22px",
+            stroke: "white",
+            strokeWidth: "2",
+            cursor: "pointer",
+          }}
+          onClick={() => setOpenProject(false)}
+        />
       </Box>
-    </Box>
+      </Box>
   );
 }
-
 export default ProjectDetailsText;

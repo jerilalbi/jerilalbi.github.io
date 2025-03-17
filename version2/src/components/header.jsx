@@ -7,26 +7,25 @@ function Header(props) {
   const headerItems = [
     {
       name: "HOME",
-      path: "/",
+      path: "home",
     },
     {
       name: "PROJECTS",
-      path: "/",
+      path: "projects",
     },
     {
       name: "SKILLS",
-      path: "/",
+      path: "skills",
     },
     {
-      name: "EDUCATION",
-      path: "/",
+      name: "TIMELINE",
+      path: "timeline",
     },
   ];
 
-  const handleItemClick = (item) => {
-    if (props.navBarRef.projectSec.current) {
-      props.navBarRef.projectSec.current.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleItemClick = (item,path) => {
+    const element = document.getElementById(path);
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
     setActiveItem(item);
   };
 
@@ -53,10 +52,11 @@ function Header(props) {
                 sx={{
                   color: "white",
                   fontFamily: "Lato, sans-serif",
+                  fontSize: {xs: "13px",sm: "15px"},
                   fontWeight: "600",
                   opacity: activeItem === items.name ? 1 : 0.5,
                 }}
-                onClick={() => handleItemClick(items.name)}
+                onClick={() => handleItemClick(items.name, items.path)}
                 disableRipple
               >
                 {items.name}

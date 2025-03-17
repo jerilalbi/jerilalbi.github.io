@@ -21,7 +21,8 @@ function TimeLine() {
 
   return (
     <Box
-    sx={skillSec}>
+    id="timeline"
+    sx={timelineSx}>
         <Box sx={{
             display: "flex",
         }}>
@@ -65,7 +66,7 @@ function TimeLine() {
 
 export default TimeLine
 
-const skillSec = {
+const timelineSx = {
     display: "flex",
     flexDirection: "column",
     width: '100%',
@@ -75,9 +76,10 @@ const skillSec = {
     backgroundImage: "linear-gradient(to top, rgba(2, 21, 38, 0.7), rgba(2, 21, 38, 1)), url('./images/timeline_bg.jpeg')",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPosition: "center",
     position: "relative",
     paddingY: "12px",
-    paddingX: "75px",
+    paddingX: {lg: "75px", md: "50px", sm: "30px", xs: "10px"},
     boxSizing: "border-box",
     "&::before": {
       content: '""',

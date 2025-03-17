@@ -14,8 +14,8 @@ function ProjectCard({
   return (
     <Box
       sx={{
-        height: "142px",
-        width: "110px",
+        height: {lg: "142px",md: "130px", sm: "120px", xs: "110px"},
+        width: {lg: "110px", md: "100px", sm: "90px", xs: "85px"},
         background: `url(${bgImg})`,
         backgroundSize: "cover",
         display: "flex",
@@ -91,8 +91,8 @@ function ProjectCard({
       >
         <Box
           sx={{
-            height: "75px",
-            width: "75%",
+            height: {lg: "75px", md: "65px", sm: "55px", xs: "50px"},
+            width: {lg: "75%", md: "65%", sm: "55%", xs: "50%"}, 
             bgcolor: "red",
             marginTop: "20px",
             background: `url(${img})`,

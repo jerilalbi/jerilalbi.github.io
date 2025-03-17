@@ -1,5 +1,6 @@
 import { Box, Tooltip, Typography } from '@mui/material'
 import React from 'react'
+import fontStyles from '../theme/fontSize'
 
 function SkillTile(props) {
   return (
@@ -10,7 +11,7 @@ function SkillTile(props) {
         marginTop: "2.5px"
     }}>
         <Typography sx={{
-            fontSize: "14px",
+            fontSize: fontStyles.fontBodyMed,
             fontWeight: "600"
         }}>
             {props.title}
@@ -18,7 +19,7 @@ function SkillTile(props) {
         <Tooltip title = {props.message} >
         <Typography sx={{
             fontWeight: "600",
-            fontSize: "14px",
+            fontSize: fontStyles.fontBodyMed,
             cursor: "pointer",
             color: props.isSkill ? setColor(props.value) : "white"
         }}>

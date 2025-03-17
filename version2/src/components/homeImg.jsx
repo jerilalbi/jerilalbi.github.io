@@ -10,6 +10,7 @@ function HomeImage() {
         bottom: "0",
         width: "460px",
         zIndex: "100",
+        display: { xs: "none", md: "block" },
       }}
     >
       <img

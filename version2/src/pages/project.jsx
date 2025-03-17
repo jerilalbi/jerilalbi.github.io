@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React, { forwardRef } from "react";
+import React from "react";
 import ProjectSideSec from "../components/projectSideSec";
 import ProjectMain from "../components/projectMain";
 import ProjectSideDetails from "../components/projectSideDetails";
@@ -7,16 +7,16 @@ import { ProjectProvider } from "../providers/ProjectProvider";
 import ProjectDetailsImg from "../components/projectDetailsImg";
 import ProjectDetailsText from "../components/projectDetailsText";
 
-const Project = forwardRef((props, ref) => {
+function Project () {
   return (
     <Box
-      ref={ref}
+      id="projects"
       sx={{
         display: "flex",
         flexDirection: "column",
         height: "700px",
         width: "100%",
-        padding: "12px",
+        padding: {sm: "12px", xs: "0px"},
       }}
     >
       <Typography
@@ -42,12 +42,21 @@ const Project = forwardRef((props, ref) => {
           <ProjectSideSec />
           <ProjectMain />
           <ProjectSideDetails />
-          <ProjectDetailsImg />
-          <ProjectDetailsText />
+          <Box sx={{ 
+            position: "absolute",
+            display: "flex",
+            flexDirection: {md: "row", xs: "column-reverse"},
+            width: {md: "100%", sm: "84%", xs: "92%"},
+            height: {md: "650px", xs: "650px"},
+            marginTop: "15px",
+            }}>
+              <ProjectDetailsImg />
+              <ProjectDetailsText />
+          </Box>
         </ProjectProvider>
       </Box>
     </Box>
   );
-});
+};
 
 export default Project;

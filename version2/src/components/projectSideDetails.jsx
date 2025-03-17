@@ -20,8 +20,10 @@ function ProjectSideDetails() {
     <Box
       sx={{
         flexGrow: "1",
-        display: "flex",
-        height: "500px",
+        display: {md: "flex", xs: "none"},
+        width: "400px",
+        height: "auto",
+        aspectRatio: "4 / 5", 
         bgcolor: "primary.main",
         marginLeft: "20px",
         marginY: "auto",
@@ -79,7 +81,7 @@ function ProjectSideDetails() {
             >
               GitHub
             </Typography>
-            <LinkIcon sx={{ color: "white", marginLeft: "3px" }} />
+            <LinkIcon sx={{ color: "#00ff00", marginLeft: "3px", cursor: "pointer" }} />
           </Box>
         </Box>
       </Box>
@@ -136,6 +138,8 @@ function ProjectSideDetails() {
             cursor: "pointer",
             transition: "transform 0.5s linear",
             transform: animation ? "translateY(0px)" : "translateY(-20px)",
+            pointerEvents: "auto",
+            zIndex: "100",
           }}
           onClick={() => setOpenProject(true)}
         >

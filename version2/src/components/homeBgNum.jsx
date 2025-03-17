@@ -20,6 +20,7 @@ function HomeBgNum(props) {
         right: numRightPos,
         left: numleftPos,
         overflow: "hidden",
+        display: { xs: "none", md: "block" },
       }}
     >
       <Typography sx={textStyle}>{props.number}</Typography>

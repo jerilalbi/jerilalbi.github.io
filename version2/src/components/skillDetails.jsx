@@ -1,6 +1,7 @@
 import { Box, Tooltip, Typography } from '@mui/material'
 import React from 'react'
 import SkillTile from './skillTile'
+import fontStyles from '../theme/fontSize'
 
 function SkillDetails() {
   const skillData = [
@@ -36,14 +37,14 @@ function SkillDetails() {
     },
     {
       title: "SQL",
-      value: "82",
+      value: "87",
       img: "/images/skills/sql.png",
     },
   ]
   return (
     <Box sx={{
-        height: "400px",
-        width: "600px",
+        height: {lg: "400px", md: "350px",sm: "380px"},
+        width: {lg: "600px", md: "450px", sm: "87%", xs: "90%"},
         display: "flex",
         flexDirection: "column",
         bgcolor: "rgba(95, 95, 95, 0.8)",
@@ -52,7 +53,7 @@ function SkillDetails() {
         boxSizing: "border-box",
     }}>
       <Box sx={{
-        height: "150px",
+        height: {lg: "150px", md: "130px"},
         width: "100%",
         display: "flex",
         color: "white",
@@ -75,12 +76,12 @@ function SkillDetails() {
           flexDirection: "column",
         }}>
           <Typography sx={{
-            fontSize: "25px",
+            fontSize: {md: fontStyles.fontHeadingLg, sm: "25px", xs: "30px"},
             fontWeight: "750",
             fontFamily: "Lato, sans-serif",
           }}>Jeril</Typography>
           <Typography sx={{
-            fontSize: "25px",
+            fontSize: {md: fontStyles.fontHeadingLg, sm: "25px", xs: "30px"},
             fontWeight: "750",
             lineHeight: ".6",
             fontFamily: "Lato, sans-serif",
@@ -88,29 +89,29 @@ function SkillDetails() {
 
           <Box sx={{flex: 1, alignContent: "flex-end"}}>
           <Typography sx={{
-            fontSize: "19px",
+            fontSize: {md: "19px", sm: "15px", xs: "18px"},
             fontWeight: "450",
             marginBottom: "7px"
           }}>Age</Typography>
 
           <Box sx={{display: "flex"}}>
             <Typography sx={{
-              fontSize: "23px",
+              fontSize: fontStyles.fontHeadingLg,
               fontWeight: "750",
               lineHeight: ".6",
             }}>21</Typography>
             <Box sx={{
               marginLeft: "10px",
-              height: "15px",
-              width: "15px",
-              borderRadius: "15px",
+              height: {md: "15px", sm: "12px", xs: "10px"},
+              width: {md: "15px", sm: "12px", xs: "10px"},
+              borderRadius: {md: "15px", sm: "12px", xs: "10px"},
               bgcolor: "rgba(0, 149, 255, 0.8)",
               borderStyle: "solid",
               borderWidth: "2px",
               borderColor: "white"}}/>
             <Tooltip title="Software Engineer">
                 <Typography sx={{
-                  fontSize: "23px",
+                  fontSize: fontStyles.fontHeadingLg,
                   fontWeight: "750",
                   marginLeft: "10px",
                   lineHeight: ".6",
@@ -123,10 +124,10 @@ function SkillDetails() {
         <Box sx={{
           flexGrow: "1",
           height: "100%",
-          marginLeft: "50px",
+          marginLeft: {md: "50px", sm: "0"},
           display: "flex",
           flexDirection: "column",
-          textAlign: "start"
+          textAlign: "end",
           }}>
             <Box sx={{
               width: "100%",
@@ -155,7 +156,7 @@ function SkillDetails() {
               }}>
                 <Typography sx={{
                   fontWeight: "750",
-                  fontSize: "17px",
+                  fontSize: fontStyles.fontHeadingMed,
                 }}>
                   FREELANCE
                 </Typography>
@@ -171,17 +172,17 @@ function SkillDetails() {
             </Box>
             <Typography sx={{
               fontWeight: "550",
-              fontSize: "15px",
+              fontSize: fontStyles.fontBodyMed,
               marginTop: "auto",
             }}
-            >Typing Speed: <Typography component={"span"} fontWeight={"750"}>32 WPM</Typography> </Typography>
+            >Typing Speed: <Typography component={"span"} fontWeight={"750"} fontSize={fontStyles.fontBodyLg}>32 WPM</Typography> </Typography>
             <Typography sx={{
               fontWeight: "550",
-              fontSize: "15px",
+              fontSize: fontStyles.fontBodyMed,
             }}
             >Languages: 
-            <Tooltip title = "English ( conversational )"><Typography component={"span"} fontWeight={"750"}> EN</Typography></Tooltip>,
-            <Tooltip title = "Malayalam ( native )"><Typography component={"span"} fontWeight={"750"}> MAL</Typography></Tooltip>
+            <Tooltip title = "English ( conversational )"><Typography component={"span"} fontWeight={"750"} fontSize={fontStyles.fontBodyLg}> EN</Typography></Tooltip>,
+            <Tooltip title = "Malayalam ( native )"><Typography component={"span"} fontWeight={"750"} fontSize={fontStyles.fontBodyLg}> MAL</Typography></Tooltip>
             </Typography>
         </Box>
       </Box>
@@ -189,7 +190,7 @@ function SkillDetails() {
         display: "flex",
         width: "100%",
         flexGrow: "1",
-        marginTop: "30px",
+        marginTop: {lg: "30px", md: "17px", sm: "20px", xs: "25px"},
         color: "white",
         overflowY: "auto",
       }}>
@@ -204,7 +205,7 @@ function SkillDetails() {
         }}>
           <Typography sx={{
           fontWeight: "750",
-          fontSize: "23px",
+          fontSize: fontStyles.fontHeadingLg,
         }}>
           Report
         </Typography>
@@ -227,7 +228,7 @@ function SkillDetails() {
           </Typography>
           <Typography sx={{
             fontWeight: "750",
-            fontSize: "40px",
+            fontSize: {lg: "40px", md: "30px", sm: "32px", xs: "35px"},
             lineHeight: ".7",
             color: "#08ff42"
           }}>
@@ -237,7 +238,7 @@ function SkillDetails() {
           <Box sx={{
             height: "70px",
             flexGrow: "1",
-            marginLeft: "70px",
+            marginLeft: {lg: "55px", md: "15px"},
             paddingX: "10px",
             boxSizing: "border-box",
             alignItems: "center",
@@ -267,7 +268,7 @@ function SkillDetails() {
         }}>
         <Typography sx={{
           fontWeight: "750",
-          fontSize: "23px",
+          fontSize: fontStyles.fontHeadingLg,
         }}>
           Summary
         </Typography>
