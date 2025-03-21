@@ -65,7 +65,6 @@ function TimelineCard({data,activeSec}) {
         }}>
             {data.duration}
         </Typography>
-        {console.log(data)}
     </Box>
   )
 }

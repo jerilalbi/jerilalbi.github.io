@@ -1,28 +1,32 @@
-import { Box, Typography } from "@mui/material";
-import React, { useContext, useEffect } from "react";
+import { Box, IconButton, Typography } from "@mui/material";
+import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "../providers/ProjectProvider";
 import CloseIcon from "@mui/icons-material/Close";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import projectData from "../data/projectData";
 
 function ProjectDetailsText() {
-  const { openProject, setOpenProject, projectImgSecRef, projectTextSecRef } =
+  const { openProject, setOpenProject, projectImgSecRef, projectTextSecRef, imgPopSecRef, activeBox, boxes } =
     useContext(ProjectContext);
+  const [projectContent, setProjectContent] = useState("");
 
   useEffect(() => {
+    projectData[boxes[activeBox].id].description().then((data) => setProjectContent(data));
+
     const handleClickOutside = (event) => {
       if (
-        projectImgSecRef.current &&
-        projectTextSecRef.current &&
-        !projectImgSecRef.current.contains(event.target) &&
-        !projectTextSecRef.current.contains(event.target)
+        projectImgSecRef.current?.contains(event.target) ||
+        projectTextSecRef.current?.contains(event.target) ||
+        imgPopSecRef.current?.contains(event.target)
       ) {
-        setOpenProject(false);
+        return;
       }
+      setOpenProject(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [setOpenProject, projectImgSecRef, projectTextSecRef]);
+  }, [setOpenProject, projectImgSecRef, projectTextSecRef, imgPopSecRef, activeBox, boxes]);
 
   const handleBoxClick = (event) => {
     event.stopPropagation();
@@ -43,7 +47,6 @@ function ProjectDetailsText() {
           textAlign: "start",
           borderRadius: {md: "0px 15px 15px 0", xs: "15px 15px 0 0"},
           paddingY: "10px",
-          // paddingX: {md: "30px",sm: "20px", xs: "15px"},
           paddingX: "10px",
           boxSizing: "border-box",
           zIndex: "150",
@@ -52,7 +55,7 @@ function ProjectDetailsText() {
         }}
       >
         <Box sx={{
-          display: 'inline', 
+          display: 'inline-flex', 
           alignItems: 'baseline',
           }}>
           <Typography
@@ -63,9 +66,21 @@ function ProjectDetailsText() {
               fontFamily: "Lato, sans-serif",
             }}
           >
-            Cafe management sytem
+            {projectData[boxes[activeBox].id].title}
           </Typography>
-          <GitHubIcon sx={{height: '30px', width: "30px", marginLeft: '10px',cursor: 'pointer'}}/>
+          <IconButton 
+          href={projectData[boxes[activeBox].id].githubUrl}
+          sx={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
+            cursor: "pointer",
+            height: '50px',
+            width: '50px',
+            marginLeft: "10px"
+            }}>
+            <GitHubIcon  sx={{fontSize: '30px', color: 'white'}}/>
+          </IconButton>
         </Box>
         <Typography
         sx={{
@@ -74,21 +89,22 @@ function ProjectDetailsText() {
           marginTop: '15px'
         }}
         >
-          {`FLUTTER | FIREBASE | BLOC`}
+          {projectData[boxes[activeBox].id].skills.join(" | ").toUpperCase()}
         </Typography>
         <Box sx={{
           flex: 1,
           overflowY: "auto",
           marginTop: '15px',
+          scrollbarWidth: "none", 
+          "&::-webkit-scrollbar": { display: "none" } 
         }}>
         <Typography
         sx={{
           fontWeight: "500",
           textAlign: 'justify',
+          whiteSpace: "pre-line",
         }}>
-          Lorem Ipsum is simple dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown writer took a handful of words and scrambled them to make a type specimen book. Not only has it survived five centuries, but it has also made it into electronic typesetting (note, almost unchanged). It was popularised in the 1960s with the release of "Letraset", which contained passages of Lorem Ipsum, as did desktop software like "Aldus PageMaker", also using Lorem Ipsum.
-          Lorem Ipsum is simple dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown writer took a handful of words and scrambled them to make a type specimen book. Not only has it survived five centuries, but it has also made it into electronic typesetting (note, almost unchanged). It was popularised in the 1960s with the release of "Letraset", which contained passages of Lorem Ipsum, as did desktop software like "Aldus PageMaker", also using Lorem Ipsum.
-          Lorem Ipsum is simple dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown writer took a handful of words and scrambled them to make a type specimen book. Not only has it survived five centuries, but it has also made it into electronic typesetting (note, almost unchanged). It was popularised in the 1960s with the release of "Letraset", which contained passages of Lorem Ipsum, as did desktop software like "Aldus PageMaker", also using Lorem Ipsum.
+          {projectContent}
         </Typography>
         </Box>
         <Box

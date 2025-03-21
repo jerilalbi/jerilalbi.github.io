@@ -1,0 +1,12 @@
+My Portfolio Website is a personal website designed to showcase my skills, education, projects, and professional experiences. The first version was built using HTML, CSS, and JavaScript, while the second version was developed using React.js for better performance, interactivity, and scalability. The website serves as a digital resume, highlighting my expertise in web and mobile development.
+
+Features:
+- About Me: A detailed introduction covering my skills and expertise.
+- Education & Experience: Showcasing my academic background and internships.
+- Projects: A portfolio of projects with descriptions and technologies used.
+- Responsive Design: Optimized for all devices to ensure a seamless user experience.
+- SEO Optimization: Improved visibility and search engine ranking.
+
+Technologies Used:
+Version 1: HTML, CSS, JavaScript
+Version 2: React.js, Material-UI

@@ -193,6 +193,8 @@ function SkillDetails() {
         marginTop: {lg: "30px", md: "17px", sm: "20px", xs: "25px"},
         color: "white",
         overflowY: "auto",
+        scrollbarWidth: "none", 
+        "&::-webkit-scrollbar": { display: "none" } 
       }}>
         <Box sx={{
           display: "flex",
@@ -276,6 +278,8 @@ function SkillDetails() {
           width: "100%",
           flex: "1",
           overflowY: "auto",
+          scrollbarWidth: "none", 
+          "&::-webkit-scrollbar": { display: "none" } 
         }}>
           {
             skillData.map( data => (

@@ -1,19 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import fontStyles  from "../theme/fontSize";
+import { Typewriter } from "react-simple-typewriter";
 
 const jobTitles = ["WEB DEVELOPER", "FLUTTER DEVELOPER"];
 
 function HomeNameSec() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const textInterval = setInterval(() => {
-      setIndex((index) => index + 1);
-    }, 3000);
-    return () => clearInterval(textInterval);
-  }, []);
   return (
     <Box sx={homeNameBx}>
       <Typography
@@ -37,7 +30,18 @@ function HomeNameSec() {
       >
         Albi
       </Typography>
-      <Typography sx={jobTitleText}>WEB DEVELOPER</Typography>
+      <Typography sx={jobTitleText}>
+        <Typewriter
+          words={jobTitles}
+          loop={Infinity}
+          cursor
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={100} 
+          delaySpeed={1000}
+        />
+      </Typography>
+      <Box sx={{ height: "30px" }} />
       <LocationOnIcon sx={{ height: "17px", width: "17px" }} />{" "}
       <Typography
         sx={{
@@ -65,6 +69,7 @@ const homeNameBx = {
 };
 
 const jobTitleText = {
+  position: "absolute",
   fontSize: "25px",
   fontWeight: "750",
   fontFamily: "Lato, sans-serif",

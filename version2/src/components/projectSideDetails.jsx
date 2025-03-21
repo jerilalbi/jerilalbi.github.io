@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "../providers/ProjectProvider";
+import projectData from "../data/projectData";
 
 function ProjectSideDetails() {
   const { boxes, activeBox, setOpenProject } = useContext(ProjectContext);
@@ -31,6 +32,7 @@ function ProjectSideDetails() {
         boxSizing: "border-box",
         padding: "8px",
         flexDirection: "column",
+        zIndex: "100",
       }}
     >
       <Box sx={{ display: "flex" }}>
@@ -81,7 +83,9 @@ function ProjectSideDetails() {
             >
               GitHub
             </Typography>
-            <LinkIcon sx={{ color: "#00ff00", marginLeft: "3px", cursor: "pointer" }} />
+            <a href={projectData[boxes[activeBox].id].githubUrl}>
+              <LinkIcon sx={{ color: "#00ff00", fontSize: "25px", marginLeft: "3px", cursor: "pointer", zIndex: "101" }} />
+            </a>
           </Box>
         </Box>
       </Box>
@@ -99,7 +103,7 @@ function ProjectSideDetails() {
           sx={{
             gridRow: "span 7",
             borderRadius: "15px",
-            background: `url(https://cdn.prod.website-files.com/63894f0e251e567f6e443bfa/63aa9998860562a8243c1f02_Spotify-1.jpeg)`,
+            background: `url(${projectData[boxes[activeBox].id].images[0]})`,
             backgroundSize: "cover",
             transition: "transform 0.3s linear",
             transform: animation ? "translateX(0px)" : "translateX(20px)",
@@ -109,7 +113,7 @@ function ProjectSideDetails() {
           sx={{
             gridRow: "span 3",
             borderRadius: "15px",
-            background: `url(https://cdn.prod.website-files.com/5b0c471ddb589cf22d4477a4/5ce12e157e30fb091a1ca23a_01_trips_appstore_screenshots.png)`,
+            background: `url(${projectData[boxes[activeBox].id].images[1]})`,
             backgroundSize: "cover",
             transition: "transform 0.4s linear",
             transform: animation ? "translateX(0px)" : "translateX(20px)",
@@ -119,7 +123,7 @@ function ProjectSideDetails() {
           sx={{
             gridRow: "span 3",
             borderRadius: "15px",
-            background: `url(https://cdn.prod.website-files.com/5b0c471ddb589cf22d4477a4/5ce12e157e30fb091a1ca23a_01_trips_appstore_screenshots.png)`,
+            background: `url(${projectData[boxes[activeBox].id].images[2]})`,
             backgroundSize: "cover",
             transition: "transform 0.5s linear",
             transform: animation ? "translateX(0px)" : "translateX(20px)",

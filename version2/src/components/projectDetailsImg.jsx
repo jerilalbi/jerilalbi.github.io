@@ -1,11 +1,12 @@
 import { Box } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "../providers/ProjectProvider";
-import { projectImgs } from "./image_helper";
+import projectData from "../data/projectData";
 
 function ProjectDetailsImg() {
-  const { openProject, projectImgSecRef } = useContext(ProjectContext);
+  const { openProject, projectImgSecRef, setOpenImage, setImgUrl, activeBox, boxes } = useContext(ProjectContext);
   const [ imgArrangement, setImagArrangement ] = useState([]);
+  const projectImgs = projectData[boxes[activeBox].id].images;
 
   function getValidCombinations(gridRows, gridCols, numBoxes) {
     const gridArea = gridRows * gridCols;
@@ -99,6 +100,7 @@ function getNoRows(imgLen){
 
 
   function randomNo(min, max) {
+    if( max <= min) return 0;
     return Math.floor(Math.random() * (max - min) + min);
   }
 
@@ -106,10 +108,14 @@ function getNoRows(imgLen){
     if(openProject){
       const noRows = getNoRows(projectImgs.length);
       const imgCombinations = getValidCombinations(noRows,3,projectImgs.length);
-      const arrangement = imgCombinations[randomNo(0,imgCombinations.length)];
-      setImagArrangement(arrangement)
+      if (imgCombinations.length > 0) {
+        const arrangement = imgCombinations[randomNo(0, imgCombinations.length)];
+        setImagArrangement(arrangement);
+      } else {
+        setImagArrangement([]);
+      }
     }
-  },[openProject])
+  },[openProject, projectImgs.length]);
 
   return (
     <Box
@@ -124,6 +130,7 @@ function getNoRows(imgLen){
         boxSizing: "border-box",
         zIndex: "200",
         transition: "transform .3s linear",
+        // transform: "translateX(-50%)",
         transform: openProject ? "translateX(0)" : "translateX(-150%)",
       }}
     >
@@ -136,9 +143,11 @@ function getNoRows(imgLen){
           overflowY: "auto",
           gap: "5px",
           gridAutoFlow: "dense",
+          scrollbarWidth: "none", 
+          "&::-webkit-scrollbar": { display: "none" } 
         }}
       >
-        { imgArrangement.length > 0 && projectImgs.map((img, index) => (
+        { imgArrangement.length === projectImgs.length && projectImgs.map((img, index) => (
           <Box
             sx={{
               gridRow: `span ${imgArrangement[index].rowspan}`,
@@ -146,7 +155,9 @@ function getNoRows(imgLen){
               borderRadius: "15px",
               background: `url(${img})`,
               backgroundSize: "cover",
+              cursor: "pointer",
             }}
+            onClick={() => {setOpenImage(true); setImgUrl(img)}}
           />
         ))}
       </Box>

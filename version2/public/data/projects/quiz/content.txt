@@ -1,0 +1,12 @@
+QuizMaster is a Flutter-based quiz app designed to enhance learning through interactive quizzes. It uses JSON data to store and retrieve quiz questions, making it lightweight and efficient. This project was primarily developed to understand the Provider state management concept, ensuring smooth data handling and UI updates.
+
+Features:
+- Diverse Quizzes: Loads quiz questions dynamically from JSON data.
+- State Management with Provider: Efficiently manages quiz states and UI updates.
+- Real-Time Score Tracking: Displays the user's progress and final score.
+- User-Friendly Interface: Simple and engaging UI for a seamless quiz experience.
+
+Technologies Used:
+- Frontend: Flutter
+- State Management: Provider
+- Data Handling: JSON

@@ -15,8 +15,11 @@ export const ProjectContext = createContext();
 export const ProjectProvider = ({ children }) => {
   const projectImgSecRef = useRef(null);
   const projectTextSecRef = useRef(null);
+  const imgPopSecRef = useRef(null);
   const [activeBox, setActiveBox] = useState(0);
   const [openProject, setOpenProject] = useState(false);
+  const [openImage, setOpenImage] = useState(false);
+  const [imgUrl, setImgUrl] = useState("");
   const [boxes, setBoxes] = useState([
     {
       id: 1,
@@ -73,6 +76,11 @@ export const ProjectProvider = ({ children }) => {
         setOpenProject,
         projectImgSecRef,
         projectTextSecRef,
+        imgPopSecRef,
+        openImage,
+        setOpenImage,
+        imgUrl,
+        setImgUrl,
       }}
     >
       {children}

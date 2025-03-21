@@ -6,6 +6,7 @@ import ProjectSideDetails from "../components/projectSideDetails";
 import { ProjectProvider } from "../providers/ProjectProvider";
 import ProjectDetailsImg from "../components/projectDetailsImg";
 import ProjectDetailsText from "../components/projectDetailsText";
+import ImagePopUp from "../components/imagePop";
 
 function Project () {
   return (
@@ -42,7 +43,7 @@ function Project () {
           <ProjectSideSec />
           <ProjectMain />
           <ProjectSideDetails />
-          <Box sx={{ 
+          <Box sx={{
             position: "absolute",
             display: "flex",
             flexDirection: {md: "row", xs: "column-reverse"},
@@ -53,6 +54,7 @@ function Project () {
               <ProjectDetailsImg />
               <ProjectDetailsText />
           </Box>
+          <ImagePopUp />
         </ProjectProvider>
       </Box>
     </Box>

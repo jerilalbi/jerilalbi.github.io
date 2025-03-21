@@ -16,6 +16,7 @@ export const projectImgs = [
   "https://images.pexels.com/photos/13649629/pexels-photo-13649629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/28050583/pexels-photo-28050583/free-photo-of-kapadokya.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/28905935/pexels-photo-28905935/free-photo-of-scenic-view-of-venice-canal-with-iconic-dome.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+  "https://images.pexels.com/photos/29328638/pexels-photo-29328638/free-photo-of-scenic-waterfall-in-turkish-forest-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   // "https://images.pexels.com/photos/28102083/pexels-photo-28102083/free-photo-of-a-small-harbor-with-boats-docked-in-it.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   // "https://images.pexels.com/photos/28283862/pexels-photo-28283862/free-photo-of-a-mountain-lake-with-clouds-and-fog.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   // "https://images.pexels.com/photos/28241451/pexels-photo-28241451/free-photo-of-a-tree-in-front-of-a-brick-house.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
