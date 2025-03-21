@@ -1,0 +1,13 @@
+WalPer is a Flutter-based wallpaper app that provides a vast collection of high-quality wallpapers from the Pexels API while also allowing users to browse exclusive wallpapers stored in Firebase. The app offers a seamless browsing experience with search functionality and the ability to set wallpapers directly for the home screen, lock screen, or both.
+
+Features:
+- Extensive Wallpaper Collection: Fetches high-resolution wallpapers from the Pexels API.
+- Exclusive Wallpapers: Access custom wallpapers stored in Firebase.
+- Set Wallpaper: Set wallpapers for the home screen, lock screen, or both with a single tap.
+- Search Functionality: Easily find wallpapers by keywords.
+- User-Friendly Interface: Clean and intuitive design for a smooth experience.
+
+Technologies Used:
+Frontend: Flutter
+API Integration: Pexels API
+Backend: Firebase

@@ -1,0 +1,13 @@
+StockAlert Bot is a Node.js script designed to scrape stock market data from a stock analysis website and send real-time alerts via the Telegram API. The script automates data extraction, processes key stock insights, and notifies users instantly about significant market movements.
+
+Features:
+- Web Scraping: Extracts real-time stock data from a stock analysis website.
+- Automated Alerts: Sends instant notifications to Telegram when specific conditions are met.
+- Efficient Data Processing: Parses and filters relevant stock insights.
+- Scheduled Execution: Runs at predefined intervals to keep users updated.
+
+Technologies Used:
+- Backend: Node.js
+- Web Scraping: Puppeteer
+- Messaging: Telegram API
+- Scheduler: Cron Jobs

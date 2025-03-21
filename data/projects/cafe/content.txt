@@ -1,0 +1,13 @@
+This is a .NET desktop application designed to facilitate product ordering in cafés. It supports three user roles: Admin, Employee, and Customer. Customers can place orders and receive a QR code via email after payment. Employees can scan the QR code to view order details, while Admins can manage the café's products, employees, and track overall performance.
+
+Features:
+- Customer: Select products and receive a QR code via email after completing payment.
+- Employee: Scan customer QR codes to view and process ordered items.
+-Admin: Manage products and employees, Track café performance through detailed reports and dashboards.
+- Database: SQL database to manage orders, products, and user data.
+
+Technologies Used:
+- Frontend: .NET Framework
+- Backend: SQL Server for data storage and retrieval
+- QR Code Generation: Integrated QR code system for customer orders
+- Email Integration: Sends QR codes to customers via email
