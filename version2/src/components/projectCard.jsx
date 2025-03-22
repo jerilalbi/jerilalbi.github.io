@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { useTheme } from "@emotion/react";
 
 function ProjectCard({
   bgImg,
@@ -11,6 +12,8 @@ function ProjectCard({
   draggable,
   isSelected,
 }) {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -48,7 +51,7 @@ function ProjectCard({
           },
         }),
       }}
-      draggable={draggable}
+      draggable={window.innerWidth >= theme.breakpoints.values.sm}
       onDragOver={(e) => e.preventDefault()}
       onDragStart={onDragStart}
       onDrop={onDrop}

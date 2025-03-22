@@ -22,7 +22,7 @@ const skillSec = {
     alignItems: "center",
     justifyContent: "center",
     width: '100%',
-    height: '80vh',
+    height: {sm: '80vh', xs: "auto"},
     marginY: "20px",
     bgcolor: "blue",
     backgroundImage: "linear-gradient(to top, rgba(2, 21, 38, 0.5), rgba(2, 21, 38, 1)), url('./images/Anfield.webp')",
@@ -30,7 +30,8 @@ const skillSec = {
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
-    padding: "12px",
+    paddingX: "12px",
+    paddingY: {sm: "0", xs: "10px"},
     boxSizing: "border-box",
     "&::before": {
       content: '""',

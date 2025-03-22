@@ -23,7 +23,7 @@ const iconBtns = [
 {
   "title" : "Download CV",
   "icon": <ArticleIcon sx={{height: '30px', width: '30px', opacity: '.4',':hover':{opacity: '1'}}}/>,
-  "action": "#"
+  "action": "/data/Jeril-resume.pdf"
 },
 ]
 
@@ -35,6 +35,7 @@ function HomeIconBox() {
           <Tooltip title= {iconBtns.title} placement='right'>
             <IconButton 
             href={iconBtns.action}
+            download={iconBtns.title === 'Download CV' ? 'Jeril-resume.pdf' : ''}
             sx={{display: 'block', color: 'white', paddingY: '8px', paddingX: '0'}}>
             {iconBtns.icon}
             </IconButton>

@@ -63,14 +63,14 @@ function SkillDetails() {
         src="/images/my_img.png"
         alt="img Jeril"
         sx={{
-          height: "100%",
-          width: "115px",
+          height: {sm: "100%", xs: "80%"},
+          width: {sm: "115px", xs: "100px"},
           objectFit: "contain",
           objectPosition: "top",
           alignSelf: "flex-end",
         }}/>
         <Box sx={{
-          marginLeft: "10px",
+          marginLeft: {sm: "10px", xs: "5px"},
           textAlign: "left",
           display: "flex",
           flexDirection: "column",
@@ -133,12 +133,14 @@ function SkillDetails() {
               width: "100%",
               height: "50%",
               display: "flex",
-              flexDirection: "row-reverse",
+              flexDirection: {sm: "row-reverse", xs: "column-reverse"},
+              alignItems: {sm: "normal",xs: "end"}
             }}>
               <Box
               sx={{
-                height: "70%",
-                width: "70px",
+                height: {sm: "70%", xs: "40px"},
+                width: {sm: "70px", xs: "40px"},
+                marginTop: {sm: "0", xs: "5px"},
                 backgroundImage: "url(https://www.svgviewer.dev/static-svgs/34708/upwork.svg)",
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
@@ -161,8 +163,8 @@ function SkillDetails() {
                   FREELANCE
                 </Typography>
                 <Box sx={{
-                  height: "30px",
-                  width: "40px",
+                  height: {sm: "30px", xs: "20px"},
+                  width: {sm: "40px", xs: "30px"},
                   backgroundImage: "url(./images/India.webp)",
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
@@ -170,13 +172,16 @@ function SkillDetails() {
                 }}/>
               </Box>
             </Box>
-            <Typography sx={{
+            <Typography 
+            sx={{
+              display: {xs: "none", sm: "block"},
               fontWeight: "550",
               fontSize: fontStyles.fontBodyMed,
               marginTop: "auto",
             }}
             >Typing Speed: <Typography component={"span"} fontWeight={"750"} fontSize={fontStyles.fontBodyLg}>32 WPM</Typography> </Typography>
             <Typography sx={{
+              display: {xs: "none", sm: "block"},
               fontWeight: "550",
               fontSize: fontStyles.fontBodyMed,
             }}

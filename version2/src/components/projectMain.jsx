@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import ProjectCard from "./projectCard";
 import { ProjectContext } from "../providers/ProjectProvider";
 import { useTheme } from "@emotion/react";
@@ -15,43 +15,31 @@ function ProjectMain() {
     e.dataTransfer.setData("draggedBoxIndex", index);
   };
 
-  const handleDrop = (e, index) => {
-    const draggedBoxIndex = e.dataTransfer.getData("draggedBoxIndex");
-    if (draggedBoxIndex !== index) {
-      const updatedBoxes = [...boxes];
-      const temp = updatedBoxes[draggedBoxIndex];
-      updatedBoxes[draggedBoxIndex] = updatedBoxes[index];
-      updatedBoxes[index] = temp;
-      if (activeBox === Number(draggedBoxIndex)) {
-        setActiveBox(index);
-      } else if (activeBox === index) {
-        setActiveBox(Number(draggedBoxIndex));
-      }
-      setBoxes(updatedBoxes);
-    }
-  };
-
   const handleDragOver = (e) => {
     e.preventDefault();
   };
 
-  const handleArrowKey = useCallback(
-    (e) => {
-      if (e.key === "ArrowRight" && activeBox < boxes.length - 1) {
-        setActiveBox((prevIndex) => prevIndex + 1);
-      } else if (e.key === "ArrowLeft" && activeBox > 0) {
-        setActiveBox((prevIndex) => prevIndex - 1);
-      }
-    },
-    [activeBox, boxes.length, setActiveBox]
-  );
+const handleDrop = (e, index) => {
+  e.preventDefault();
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleArrowKey);
-    return () => {
-      window.removeEventListener("keydown", handleArrowKey);
-    };
-  }, [handleArrowKey]);
+  const draggedBoxIndex = e.dataTransfer?.getData("draggedBoxIndex");
+  if (draggedBoxIndex !== index) {
+    swapBoxes(draggedBoxIndex, index);
+  }
+};
+
+const swapBoxes = (draggedBoxIndex, index) => {
+        const updatedBoxes = [...boxes];
+        const temp = updatedBoxes[draggedBoxIndex];
+        updatedBoxes[draggedBoxIndex] = updatedBoxes[index];
+        updatedBoxes[index] = temp;
+        if (activeBox === Number(draggedBoxIndex)) {
+          setActiveBox(index);
+        } else if (activeBox === index) {
+          setActiveBox(Number(draggedBoxIndex));
+        }
+        setBoxes(updatedBoxes);
+}
 
   return (
     <Box sx={projectMainBx}>
