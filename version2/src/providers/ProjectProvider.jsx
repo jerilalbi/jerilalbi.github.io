@@ -29,9 +29,9 @@ export const ProjectProvider = ({ children }) => {
     },
     {
       id: 2,
-      bgImg: card2,
-      projectImg: htmlLogo,
-      text: "Voyage",
+      bgImg: card1,
+      projectImg: flutterLogo,
+      text: "QuizMe",
     },
     {
       id: 3,
@@ -41,9 +41,9 @@ export const ProjectProvider = ({ children }) => {
     },
     {
       id: 4,
-      bgImg: card1,
-      projectImg: flutterLogo,
-      text: "QuizMe",
+      bgImg: card2,
+      projectImg: htmlLogo,
+      text: "Voyage",
     },
     {
       id: 5,
@@ -53,7 +53,7 @@ export const ProjectProvider = ({ children }) => {
     },
     {
       id: 6,
-      bgImg: card2,
+      bgImg: card3,
       projectImg: nodeLogo,
       text: "Stock Bot",
     },
@@ -62,6 +62,18 @@ export const ProjectProvider = ({ children }) => {
       bgImg: card3,
       projectImg: reactLogo,
       text: "Portfolio",
+    },
+    {
+      id: 8,
+      bgImg: card2,
+      projectImg: reactLogo,
+      text: "Movie",
+    },
+    {
+      id: 9,
+      bgImg: card3,
+      projectImg: reactLogo,
+      text: "Job Portal",
     },
   ]);
 

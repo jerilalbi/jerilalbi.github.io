@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import fontStyles  from "../theme/fontSize";
+import fontStyles from "../theme/fontSize";
 import { Typewriter } from "react-simple-typewriter";
 
-const jobTitles = ["WEB DEVELOPER", "FLUTTER DEVELOPER"];
+const jobTitles = ["FULL STACK DEVELOPER", "FLUTTER DEVELOPER"];
 
 function HomeNameSec() {
   return (
@@ -37,7 +37,7 @@ function HomeNameSec() {
           cursor
           cursorStyle="|"
           typeSpeed={100}
-          deleteSpeed={100} 
+          deleteSpeed={100}
           delaySpeed={1000}
         />
       </Typography>

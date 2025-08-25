@@ -5,7 +5,7 @@ import { ProjectContext } from "../providers/ProjectProvider";
 import { useTheme } from "@emotion/react";
 
 function ProjectMain() {
-  const projectFormation = [3, 1, 2];
+  const projectFormation = [4, 1, 3];
   const theme = useTheme();
 
   const { activeBox, setActiveBox, boxes, setBoxes, setOpenProject } =
@@ -19,27 +19,27 @@ function ProjectMain() {
     e.preventDefault();
   };
 
-const handleDrop = (e, index) => {
-  e.preventDefault();
+  const handleDrop = (e, index) => {
+    e.preventDefault();
 
-  const draggedBoxIndex = e.dataTransfer?.getData("draggedBoxIndex");
-  if (draggedBoxIndex !== index) {
-    swapBoxes(draggedBoxIndex, index);
+    const draggedBoxIndex = e.dataTransfer?.getData("draggedBoxIndex");
+    if (draggedBoxIndex !== index) {
+      swapBoxes(draggedBoxIndex, index);
+    }
+  };
+
+  const swapBoxes = (draggedBoxIndex, index) => {
+    const updatedBoxes = [...boxes];
+    const temp = updatedBoxes[draggedBoxIndex];
+    updatedBoxes[draggedBoxIndex] = updatedBoxes[index];
+    updatedBoxes[index] = temp;
+    if (activeBox === Number(draggedBoxIndex)) {
+      setActiveBox(index);
+    } else if (activeBox === index) {
+      setActiveBox(Number(draggedBoxIndex));
+    }
+    setBoxes(updatedBoxes);
   }
-};
-
-const swapBoxes = (draggedBoxIndex, index) => {
-        const updatedBoxes = [...boxes];
-        const temp = updatedBoxes[draggedBoxIndex];
-        updatedBoxes[draggedBoxIndex] = updatedBoxes[index];
-        updatedBoxes[index] = temp;
-        if (activeBox === Number(draggedBoxIndex)) {
-          setActiveBox(index);
-        } else if (activeBox === index) {
-          setActiveBox(Number(draggedBoxIndex));
-        }
-        setBoxes(updatedBoxes);
-}
 
   return (
     <Box sx={projectMainBx}>
@@ -63,7 +63,7 @@ const swapBoxes = (draggedBoxIndex, index) => {
           isSelected={0 === activeBox}
           onClick={() => {
             setActiveBox(0);
-            if(window.innerWidth < theme.breakpoints.values.md){
+            if (window.innerWidth < theme.breakpoints.values.md) {
               setOpenProject(true);
             }
           }}
@@ -90,7 +90,7 @@ const swapBoxes = (draggedBoxIndex, index) => {
             isSelected={index + 1 === activeBox}
             onClick={() => {
               setActiveBox(index + 1);
-              if(window.innerWidth < theme.breakpoints.values.md){
+              if (window.innerWidth < theme.breakpoints.values.md) {
                 setOpenProject(true);
               }
             }}
@@ -103,22 +103,22 @@ const swapBoxes = (draggedBoxIndex, index) => {
           width: "100%",
           display: "flex",
           justifyContent: "space-evenly",
-          top: {md: "150px", sm: "165px", xs: "180px"},
+          top: { md: "190px", sm: "175px", xs: "190px" },
         }}
       >
-        {boxes.slice(4, 4 + projectFormation[1]).map((box, index) => (
+        {boxes.slice(5, 5 + projectFormation[1]).map((box, index) => (
           <ProjectCard
             bgImg={box.bgImg}
             img={box.projectImg}
             text={box.text}
             draggable
-            onDragStart={(e) => handleDragStart(e, index + 4)}
+            onDragStart={(e) => handleDragStart(e, index + 5)}
             onDragOver={handleDragOver}
-            onDrop={(e) => handleDrop(e, index + 4)}
-            isSelected={index + 4 === activeBox}
+            onDrop={(e) => handleDrop(e, index + 5)}
+            isSelected={index + 5 === activeBox}
             onClick={() => {
-              setActiveBox(index + 4);
-              if(window.innerWidth < theme.breakpoints.values.md){
+              setActiveBox(index + 5);
+              if (window.innerWidth < theme.breakpoints.values.md) {
                 setOpenProject(true);
               }
             }}
@@ -134,19 +134,19 @@ const swapBoxes = (draggedBoxIndex, index) => {
           top: "50px",
         }}
       >
-        {boxes.slice(5, 5 + projectFormation[2]).map((box, index) => (
+        {boxes.slice(6, 6 + projectFormation[2]).map((box, index) => (
           <ProjectCard
             bgImg={box.bgImg}
             img={box.projectImg}
             text={box.text}
             draggable
-            onDragStart={(e) => handleDragStart(e, index + 5)}
+            onDragStart={(e) => handleDragStart(e, index + 6)}
             onDragOver={handleDragOver}
-            onDrop={(e) => handleDrop(e, index + 5)}
-            isSelected={index + 5 === activeBox}
+            onDrop={(e) => handleDrop(e, index + 6)}
+            isSelected={index + 6 === activeBox}
             onClick={() => {
-              setActiveBox(index + 5);
-              if(window.innerWidth < theme.breakpoints.values.md){
+              setActiveBox(index + 6);
+              if (window.innerWidth < theme.breakpoints.values.md) {
                 setOpenProject(true);
               }
             }}

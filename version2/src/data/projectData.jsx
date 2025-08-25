@@ -27,31 +27,6 @@ const projectData = {
         description: () => getFileContent("/data/projects/walper/content.txt"),
     },
     2: {
-        title: "Travel Website",
-        skills: ["Html", "Css", "Javascript"],
-        githubUrl: "https://github.com/jerilalbi/Travel-website",
-        images: [
-            "/data/projects/voyage/img/voyage1.webp",
-            "/data/projects/voyage/img/voyage2.webp",
-            "/data/projects/voyage/img/voyage3.webp",
-            "/data/projects/voyage/img/voyage4.webp",
-        ],
-        description: () => getFileContent("/data/projects/voyage/content.txt"),
-    },
-    3: {
-        title: "Cafe Management System",
-        skills: ["c#", ".net","sql"],
-        githubUrl: "https://github.com/jerilalbi/coffee-shop",
-        images: [
-            "/data/projects/cafe/img/cafe1.webp",
-            "/data/projects/cafe/img/cafe2.webp",
-            "/data/projects/cafe/img/cafe3.webp",
-            "/data/projects/cafe/img/cafe4.webp",
-            "/data/projects/cafe/img/cafe5.webp",
-        ],
-        description: () => getFileContent("/data/projects/cafe/content.txt"),
-    },
-    4: {
         title: "Quiz App",
         skills: ["Flutter", "Provider"],
         githubUrl: "https://github.com/jerilalbi/Quiz-App",
@@ -63,6 +38,31 @@ const projectData = {
             "/data/projects/quiz/img/quiz5.webp",
         ],
         description: () => getFileContent("/data/projects/quiz/content.txt"),
+    },
+    3: {
+        title: "Cafe Management System",
+        skills: ["c#", ".net", "sql"],
+        githubUrl: "https://github.com/jerilalbi/coffee-shop",
+        images: [
+            "/data/projects/cafe/img/cafe1.webp",
+            "/data/projects/cafe/img/cafe2.webp",
+            "/data/projects/cafe/img/cafe3.webp",
+            "/data/projects/cafe/img/cafe4.webp",
+            "/data/projects/cafe/img/cafe5.webp",
+        ],
+        description: () => getFileContent("/data/projects/cafe/content.txt"),
+    },
+    4: {
+        title: "Travel Website",
+        skills: ["Html", "Css", "Javascript"],
+        githubUrl: "https://github.com/jerilalbi/Travel-website",
+        images: [
+            "/data/projects/voyage/img/voyage1.webp",
+            "/data/projects/voyage/img/voyage2.webp",
+            "/data/projects/voyage/img/voyage3.webp",
+            "/data/projects/voyage/img/voyage4.webp",
+        ],
+        description: () => getFileContent("/data/projects/voyage/content.txt"),
     },
     5: {
         title: "ScanCart",
@@ -102,7 +102,37 @@ const projectData = {
             "/data/projects/portfolio/img/portfolio7.webp",
         ],
         description: () => getFileContent("/data/projects/portfolio/content.txt"),
-    }
+    },
+    8: {
+        title: "Movie Tracker",
+        skills: ["React", "FastAPI", "SQLite"],
+        githubUrl: "https://github.com/jerilalbi/MovieMate",
+        images: [
+            "https://github.com/jerilalbi/MovieMate/blob/master/screenshots/home.jpeg?raw=true",
+            "https://github.com/jerilalbi/MovieMate/blob/master/screenshots/movie_details.jpeg?raw=true",
+            "https://github.com/jerilalbi/MovieMate/blob/master/screenshots/add_movies.jpeg?raw=true",
+            "https://github.com/jerilalbi/MovieMate/blob/master/screenshots/my_movies.jpeg?raw=true",
+            "https://github.com/jerilalbi/MovieMate/blob/master/screenshots/my_movies_filter.jpeg?raw=true",
+            "https://github.com/jerilalbi/MovieMate/blob/master/screenshots/my_movies_filter2.jpeg?raw=true",
+        ],
+        description: () => getFileContent("/data/projects/movie/content.txt"),
+    },
+    9: {
+        title: "Job Portal",
+        skills: ["Mongodb", "Express", "React", "Node"],
+        githubUrl: "https://github.com/jerilalbi/JobConnect",
+        images: [
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/job_search.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/job-seeker-dashboard.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/admin_dashboard.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/employer_dashboard.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/post_new_job.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/view_applicants.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/login.jpeg?raw=true",
+            "https://github.com/jerilalbi/JobConnect/blob/master/screenshots/signup.jpeg?raw=true",
+        ],
+        description: () => getFileContent("/data/projects/jobPortal/content.txt"),
+    },
 }
 
 export default projectData;

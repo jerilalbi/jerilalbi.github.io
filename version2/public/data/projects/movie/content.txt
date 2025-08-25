@@ -1,0 +1,14 @@
+A movie tracking application using React.js, FastAPI, and SQLite, where users can view trending movies through the TMDB API and add movies with auto-filled details like name, director, and genre. The app allows users to manage watch statuses such as wishlist, watching, and completed, with dedicated tracking for ongoing shows and star rating with reviews for completed movies. Additionally, users can filter their collection by genre and status, while the responsive interface built with Material-UI ensures a seamless experience across devices.
+
+Features:
+- Search with TMDB API.
+- Trending Section.
+- Track TV Shows.
+- Ratings and Reviews.
+- Filter and Sort Options.
+
+Technologies Used:
+Frontend: React.JS
+Backend: FastAPI
+Database: SQLite
+External API: TMDB (The Movie Database)
