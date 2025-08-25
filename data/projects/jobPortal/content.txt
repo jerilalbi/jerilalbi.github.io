@@ -1,0 +1,11 @@
+This is a full-stack job portal built with React.js, Node.js, and MongoDB. It provides role-based access for three types of users: Employers can post jobs, manage applicants, and view their resumes; Job Seekers can search for jobs, apply directly, and track their application status; and Admins can approve or disapprove job postings to maintain platform quality. The system also includes secure authentication with JWT and supports file upload and preview for resumes, ensuring a smooth and practical recruitment workflow.
+
+Features:
+- User authentication and authorization using JWT.
+- Apply for jobs.
+- View and download resumes.
+
+Technologies Used:
+Frontend: React.js
+Backend: Express.js, Node.js
+Database: MongoDB
